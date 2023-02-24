@@ -13,9 +13,7 @@ function App() {
   return (
     <div className='App flex flex-row justify-center'>
       <MainContainer>
-        <SectionContainer>
-          <NavBar aboutRef={aboutRef} skillsRef={skillsRef} />
-        </SectionContainer>
+        <NavBar aboutRef={aboutRef} skillsRef={skillsRef} />
         <SectionContainer>
           <About aboutRef={aboutRef} />
         </SectionContainer>

@@ -4,16 +4,16 @@ function NavBar({ aboutRef, skillsRef }) {
   };
 
   return (
-    <nav className='fixed top-0 w-screen max-w-[1260px] flex flex-row justify-end'>
+    <nav className='fixed top-0 w-screen max-w-[1260px] flex flex-row justify-end font-bold'>
       <ul className='flex flex-row'>
         <button onClick={() => scrollIntoView(aboutRef)}>
-          <li className='p-3'>1. About</li>
+          <li className='p-3'>01. About</li>
         </button>
         <button onClick={() => scrollIntoView(skillsRef)}>
-          <li className='p-3'>2. Skills</li>
+          <li className='p-3'>02. Skills</li>
         </button>
-        <li className='p-3'>3. Projects</li>
-        <li className='p-3'>4. Contact</li>
+        <li className='p-3'>03. Projects</li>
+        <li className='p-3'>04. Contact</li>
       </ul>
     </nav>
   );

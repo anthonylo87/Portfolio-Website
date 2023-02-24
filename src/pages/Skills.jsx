@@ -3,8 +3,8 @@ function Skills({ skillsRef }) {
     <section ref={skillsRef} className='text-left w-full'>
       <div>
         <h2 className='font-bold text-4xl py-3'>Skills</h2>
-        <div className='flex flex-row'>
-          <div className='pr-3 w-1/2'>
+        <div className='flex flex-row justify-end'>
+          <div className='pr-3 w-full'>
             <p>
               I'm a full stack developer currently living in Los Angeles,
               California.
@@ -24,9 +24,6 @@ function Skills({ skillsRef }) {
               recently got married in Italy&#41; , exploring pour over shops in
               the LA area , and tinkering with my espresso machine!
             </p>
-          </div>
-          <div className='w-96'>
-            <img src='src/images/Profile.jpeg' alt='profile picture' />
           </div>
         </div>
       </div>
