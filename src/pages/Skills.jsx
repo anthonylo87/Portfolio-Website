@@ -1,10 +1,10 @@
-function About({ aboutRef }) {
+function Skills({ skillsRef }) {
   return (
-    <section ref={aboutRef} className='text-left w-full'>
+    <section ref={skillsRef} className='text-left w-full'>
       <div>
+        <h2 className='font-bold text-4xl py-3'>Skills</h2>
         <div className='flex flex-row'>
-          <div className='my-auto w-1/2'>
-            <h2 className='font-bold text-4xl py-3'>Hi, I'm Anthony.</h2>
+          <div className='pr-3 w-1/2'>
             <p>
               I'm a full stack developer currently living in Los Angeles,
               California.
@@ -25,17 +25,12 @@ function About({ aboutRef }) {
               the LA area , and tinkering with my espresso machine!
             </p>
           </div>
-          <div className='w-1/2 '>
-            <img
-              className='mx-auto'
-              src='src/images/Profile.jpeg'
-              width={400}
-              alt='profile picture'
-            />
+          <div className='w-96'>
+            <img src='src/images/Profile.jpeg' alt='profile picture' />
           </div>
         </div>
       </div>
     </section>
   );
 }
-export default About;
+export default Skills;
