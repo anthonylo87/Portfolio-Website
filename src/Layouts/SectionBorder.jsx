@@ -1,19 +1,35 @@
-function SectionBorder({ children, header, aboutRef }) {
+function SectionBorder({ children, header, orientation, border }) {
   return (
-    <div className='h-full flex' ref={aboutRef}>
-      <div className='text-left w-full h-min my-auto'>
+    <div className='h-min my-auto'>
+      <div className='text-left w-full my-auto'>
         <div>
           <div className='flex flex-row'>
             <div className='my-auto mx-4 w-full text-justify'>
-              <div className='flex flex-row'>
-                <h2 className='font-bold'>{header}</h2>
-                <div className='grow flex flex-row'>
+              <div
+                className={
+                  `flex flex-row` + (orientation === 'right' && ` justify-end`)
+                }
+              >
+                {orientation === 'right' && (
                   <div className='w-1/2'>
-                    <hr className='my-3 border-raffia-700 mx-3' />
+                    <hr className={'my-3 mx-3 ' + border} />
                   </div>
-                </div>
+                )}
+                <h2 className='font-bold'>{header}</h2>
+                {orientation === 'left' && (
+                  <div className='w-1/2'>
+                    <hr className={'my-3 mx-3 ' + border} />
+                  </div>
+                )}
               </div>
-              <div className='border-l border-raffia-700 my-2 p-8'>
+              <div
+                className={
+                  `my-2 p-8 ` +
+                  border +
+                  ' ' +
+                  (orientation === 'left' ? ` border-l` : ` border-r`)
+                }
+              >
                 {children}
               </div>
             </div>

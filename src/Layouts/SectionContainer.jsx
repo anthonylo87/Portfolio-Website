@@ -1,4 +1,4 @@
-function SectionContainer({ children }) {
-  return <section className='px-3 h-screen'>{children}</section>;
+function SectionContainer({ children, bgColor }) {
+  return <section className={`h-screen ` + bgColor}>{children}</section>;
 }
 export default SectionContainer;
