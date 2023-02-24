@@ -1,14 +1,21 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
+import MainContainer from './Layouts/MainContainer';
+import SectionContainer from './Layouts/SectionContainer';
+import NavBar from './Components/NavBar';
+import About from './pages/About';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className='App'>
-      <h1 className='p-3'>Vite + React</h1>
-      <h2 className='text-9xl'>HI</h2>
+    <div className='App flex flex-row justify-center'>
+      <MainContainer>
+        <SectionContainer>
+          <NavBar />
+        </SectionContainer>
+        <SectionContainer>
+          <About />
+        </SectionContainer>
+      </MainContainer>
     </div>
   );
 }
