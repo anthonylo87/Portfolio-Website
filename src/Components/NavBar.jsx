@@ -10,7 +10,7 @@ function NavBar({ aboutRef, skillsRef }) {
           <li className='p-3'>01. About</li>
         </button>
         <button onClick={() => scrollIntoView(skillsRef)}>
-          <li className='p-3'>02. Skills</li>
+          <li className='p-3'>02. Experience</li>
         </button>
         <li className='p-3'>03. Projects</li>
         <li className='p-3'>04. Contact</li>
