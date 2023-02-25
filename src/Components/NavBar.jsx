@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 function NavBar({ aboutRef, expRef, color }) {
+  const [textColor, strokeColor] = color;
+
   const scrollIntoView = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const textColor = `text-` + color;
 
   return (
     <nav className={`fixed inset-x-0 top-0 w-full font-bold ` + textColor}>

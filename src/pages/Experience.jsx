@@ -5,9 +5,6 @@ function ListItem({ id, currentItem, setCurrentItem, children }) {
   function handleClick() {
     setCurrentItem(id);
   }
-
-  console.log(currentItem);
-
   return (
     <button
       className={

@@ -8,7 +8,7 @@ import Experience from './pages/Experience';
 import './App.css';
 
 function App() {
-  const [color, setColor] = useState('raffia-800');
+  const [color, setColor] = useState([`text-raffia-800`, `stroke-raffia-800`]);
 
   const aboutRef = useRef(null);
   const expRef = useRef(null);
@@ -16,9 +16,9 @@ function App() {
   const changeColor = () => {
     let height = window.innerHeight;
     if (window.scrollY >= height) {
-      setColor('raffia-200');
+      setColor([`text-raffia-200`, `stroke-raffia-200`]);
     } else {
-      setColor('raffia-800');
+      setColor([`text-raffia-800`, `stroke-raffia-800`]);
     }
   };
 
