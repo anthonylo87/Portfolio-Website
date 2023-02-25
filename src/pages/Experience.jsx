@@ -9,7 +9,9 @@ function ListItem({ id, currentItem, setCurrentItem, children }) {
     <button
       className={
         `mb-2 mr-3 p-3 text-center text-sm uppercase font-bold border border-raffia-200 ` +
-        (id === currentItem ? `bg-raffia-200 text-raffia-800` : ``)
+        (id === currentItem
+          ? `bg-raffia-200 text-raffia-800`
+          : `hover:bg-raffia-800 hover:underline hover:duration-300`)
       }
       onClick={handleClick}
     >

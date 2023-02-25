@@ -27,7 +27,7 @@ function SectionBorder({ children, header, orientation, border }) {
                   `my-2 p-8 ` +
                   border +
                   ' ' +
-                  (orientation === 'left' ? ` border-l` : ` border-r`)
+                  (orientation === `left` ? `border-l` : `border-r`)
                 }
               >
                 {children}
