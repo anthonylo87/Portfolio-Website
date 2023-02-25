@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SectionBorder from '../Layouts/SectionBorder';
 
 function ListItem({ id, currentItem, setCurrentItem, children }) {
@@ -21,10 +21,16 @@ function ListItem({ id, currentItem, setCurrentItem, children }) {
 }
 
 function Experience({ expRef }) {
-  const [currentItem, setCurrentItem] = useState(0);
-
   let workplaces = ['DenoGres', 'Arup', 'Talend', 'Genesys'];
-  workplaces = workplaces.map((ele, idx) => {
+
+  const [currentItem, setCurrentItem] = useState(0);
+  const [currentWP, setCurrentWP] = useState(workplaces[currentItem]);
+
+  useEffect(() => {
+    setCurrentWP(workplaces[currentItem]);
+  }, [currentItem]);
+
+  const workplacesComponents = workplaces.map((ele, idx) => {
     return (
       <ListItem
         id={idx}
@@ -53,8 +59,31 @@ function Experience({ expRef }) {
         <br />
         <br />
         <div className='flex flex-row w-9/12 mx-auto'>
-          <div className='flex flex-col w-5/12'>{workplaces}</div>
-          <div className='border border-raffia-200 w-full'></div>
+          <div className='flex flex-col w-5/12'>{workplacesComponents}</div>
+          <div className='border border-raffia-200 w-full p-6'>
+            <div className='flex flex-row justify-between mb-6 text-lg font-bold'>
+              <h2>{currentWP}</h2>
+              <p>2022 - Present</p>
+            </div>
+            <ul className='text-xs text-justify list-disc ml-4'>
+              <li className='mb-3'>
+                Developed a comprehensive ORM library for the Deno runtime
+                (Node.js), allowing developers to fully interact with SQL
+                databases without needing to parse query strings
+              </li>
+              <li className='mb-3'>
+                Established bi-directional data flow between model classes and
+                database schema, establishing a consistent “source of truth”
+                data model and negating potential synchronization issues between
+                sources
+              </li>{' '}
+              <li className='mb-3'>
+                Constructed a graphical interface using Deno’s Fresh.js full
+                stack framework (React and Tailwind), allowing users to test and
+                and run queries via the browser
+              </li>
+            </ul>
+          </div>
         </div>
       </SectionBorder>
     </div>
