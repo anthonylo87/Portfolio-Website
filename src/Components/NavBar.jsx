@@ -1,10 +1,14 @@
-function NavBar({ aboutRef, expRef }) {
+import { useState } from 'react';
+
+function NavBar({ aboutRef, expRef, color }) {
   const scrollIntoView = (ref) => {
-    ref.current.scrollIntoView();
+    ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const textColor = `text-` + color;
+
   return (
-    <nav className='fixed inset-x-0 top-0 w-full font-bold'>
+    <nav className={`fixed inset-x-0 top-0 w-full font-bold ` + textColor}>
       <div className='max-w-7xl m-auto flex flex-row justify-end'>
         <ul className='flex flex-row'>
           <button onClick={() => scrollIntoView(aboutRef)}>
