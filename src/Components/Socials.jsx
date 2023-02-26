@@ -5,15 +5,15 @@ import EmailIcon from '@mui/icons-material/Email';
 function Socials({ color }) {
   return (
     <div className={'flex flex-col fixed right-12 bottom-48 gap-4 ' + color}>
-      <div>
+      <a href='https://www.linkedin.com/in/anthonyelo/'>
         <LinkedInIcon fontSize='large' />
-      </div>
-      <div>
+      </a>
+      <a href='https://github.com/anthonylo87'>
         <GitHubIcon fontSize='large' />
-      </div>
-      <div>
+      </a>
+      <a href='mailto:87.anthonylo@gmail.com'>
         <EmailIcon fontSize='large' />
-      </div>
+      </a>
     </div>
   );
 }
