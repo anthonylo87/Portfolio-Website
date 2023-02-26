@@ -9,10 +9,10 @@ function About({ aboutRef }) {
         border={`border-raffia-700`}
       >
         <div className='flex flex-row'>
-          <div className='my-auto mx-4 text-justify w-1/2'>
+          <div className='my-auto mx-4 text-justify w-1/2 motion-safe:animate-fadeIn'>
             <h3 className='font-bold text-4xl'>
               Hi, I'm... <br />
-              <strong className='font-bold text-8xl bg-gradient-to-r from-beaver-700 via-nepal-600 to-nepal-500  text-transparent bg-clip-text'>
+              <strong className='font-bold text-8xl bg-gradient-to-r from-beaver-700 via-nepal-600 to-nepal-500 text-transparent bg-clip-text'>
                 &nbsp; Anthony.
               </strong>
             </h3>
