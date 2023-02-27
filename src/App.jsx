@@ -9,6 +9,7 @@ import './App.css';
 
 function App() {
   const [color, setColor] = useState(`text-raffia-800`);
+  const [section, setSection] = useState(0);
 
   const aboutRef = useRef(null);
   const expRef = useRef(null);
@@ -17,8 +18,10 @@ function App() {
     let height = window.innerHeight;
     if (window.scrollY >= height) {
       setColor(`text-raffia-200`);
+      setSection(1);
     } else {
       setColor(`text-raffia-800`);
+      setSection(0);
     }
   };
 
@@ -30,7 +33,7 @@ function App() {
         <Socials color={color} />
         <NavBar aboutRef={aboutRef} expRef={expRef} color={color} />
         <SectionContainer bgColor={`bg-raffia-400`}>
-          <About aboutRef={aboutRef} />
+          <About aboutRef={aboutRef} section={section} />
         </SectionContainer>
         <SectionContainer bgColor={`bg-raffia-900`}>
           <Experience expRef={expRef} />
