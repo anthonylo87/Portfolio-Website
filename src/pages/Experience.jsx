@@ -14,12 +14,14 @@ function ListItem({
   }
   return (
     <button
-      className={
-        `mb-2 mr-3 p-3 text-center text-sm uppercase font-bold border ${appColor[id].borderColor} ` +
-        (listId === currentItem
+      className={`mb-2 mr-3 p-3 text-center text-sm uppercase font-bold border ${
+        appColor[id].borderColor
+      }  ${
+        listId === currentItem
           ? `bg-raffia-200 text-raffia-800`
-          : `hover:bg-raffia-800 hover:underline hover:duration-300`)
+          : `hover:bg-raffia-800 hover:underline hover:duration-300`
       }
+      `}
       onClick={handleClick}
     >
       {children}
@@ -28,29 +30,46 @@ function ListItem({
 }
 
 function Experience({ expRef, id, selSection, appColor }) {
-  let workplaces = ['DenoGres', 'Arup', 'Talend', 'Genesys'];
+  const workHistory = [
+    {
+      listId: 0,
+      companyName: 'DenoGres',
+    },
+    {
+      listId: 1,
+      companyName: 'Arup',
+    },
+    {
+      listId: 2,
+      companyName: 'Talend',
+    },
+    {
+      listId: 3,
+      companyName: 'Genesys',
+    },
+  ];
 
   const [currentItem, setCurrentItem] = useState(0);
-  const [currentWP, setCurrentWP] = useState(workplaces[currentItem]);
+  const [currentWP, setCurrentWP] = useState(
+    workHistory.filter((ele) => ele.listId === currentItem)
+  );
 
   useEffect(() => {
-    setCurrentWP(workplaces[currentItem]);
+    setCurrentWP(workHistory.filter((ele) => ele.listId === currentItem));
   }, [currentItem]);
 
-  const workplacesComponents = workplaces.map((ele, idx) => {
-    return (
-      <ListItem
-        id={id}
-        appColor={appColor}
-        listId={idx}
-        key={idx}
-        currentItem={currentItem}
-        setCurrentItem={setCurrentItem}
-      >
-        {ele}
-      </ListItem>
-    );
-  });
+  const workplacesComponents = workHistory.map((ele, idx) => (
+    <ListItem
+      id={id}
+      appColor={appColor}
+      listId={ele.listId}
+      key={ele.listId}
+      currentItem={currentItem}
+      setCurrentItem={setCurrentItem}
+    >
+      {ele.companyName}
+    </ListItem>
+  ));
 
   return (
     <div
@@ -59,6 +78,7 @@ function Experience({ expRef, id, selSection, appColor }) {
     >
       <SectionBorder
         id={id}
+        selSection={selSection}
         header={`${String(id).padStart(2, '0')}. Experience`}
         orientation={`right`}
         appColor={appColor}
@@ -72,7 +92,7 @@ function Experience({ expRef, id, selSection, appColor }) {
           <div className='flex flex-col w-5/12'>{workplacesComponents}</div>
           <div className={`border ${appColor[id].borderColor} w-full p-6`}>
             <div className='flex flex-row justify-between mb-6 text-lg font-bold'>
-              <h2>{currentWP}</h2>
+              <h2>DenoGres</h2>
               <p>2022 - Present</p>
             </div>
             <ul className='text-xs text-justify list-disc list-inside'>

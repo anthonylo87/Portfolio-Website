@@ -5,12 +5,17 @@ module.exports = {
     extend: {
       animation: {
         fadeIn: 'fadeIn 1s ease-in forwards',
+        fadeUp: 'fadeUp 1s ease-in forwards',
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
+        },
+        fadeUp: {
+          '0%': { opacity: 0, transform: 'translateY(2rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
         wiggle: {
           '0%, 100%': {

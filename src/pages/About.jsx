@@ -8,6 +8,7 @@ function About({ aboutRef, id, selSection, appColor }) {
     >
       <SectionBorder
         id={id}
+        selSection={selSection}
         header={`${String(id).padStart(2, '0')}. About`}
         orientation={`left`}
         appColor={appColor}
@@ -16,7 +17,7 @@ function About({ aboutRef, id, selSection, appColor }) {
           <div
             className={
               'my-auto mx-4 text-justify w-1/2' +
-              (selSection === id && ' motion-safe:animate-fadeIn')
+              (selSection === id && ' motion-safe:animate-fadeUp')
             }
           >
             <h3 className='font-bold text-4xl'>
