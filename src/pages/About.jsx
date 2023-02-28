@@ -1,18 +1,22 @@
 import SectionBorder from '../Layouts/SectionBorder';
 
-function About({ aboutRef, section }) {
+function About({ aboutRef, id, selSection, appColor }) {
   return (
-    <div className='h-full flex max-w-screen-xl m-auto' ref={aboutRef}>
+    <div
+      className={`h-full flex max-w-screen-xl m-auto ${appColor[id].textColor}`}
+      ref={aboutRef}
+    >
       <SectionBorder
-        header={`01. About`}
+        id={id}
+        header={`${String(id).padStart(2, '0')}. About`}
         orientation={`left`}
-        border={`border-raffia-700`}
+        appColor={appColor}
       >
         <div className='flex flex-row'>
           <div
             className={
               'my-auto mx-4 text-justify w-1/2' +
-              (section === 0 && ' motion-safe:animate-fadeIn')
+              (selSection === id && ' motion-safe:animate-fadeIn')
             }
           >
             <h3 className='font-bold text-4xl'>

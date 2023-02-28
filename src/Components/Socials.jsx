@@ -14,7 +14,7 @@ function Icon({ children, href }) {
 
 function Socials({ color }) {
   return (
-    <div className={'flex flex-col fixed right-12 bottom-48 gap-4 ' + color}>
+    <div className={`flex flex-col fixed right-12 bottom-48 gap-4 ${color}`}>
       <Icon href='https://www.linkedin.com/in/anthonyelo/'>
         <LinkedInIcon fontSize='inherit' />
       </Icon>
