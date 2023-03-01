@@ -10,7 +10,7 @@ function Projects({ projectRef, id, selSection, appColor }) {
       <SectionBorder
         id={id}
         selSection={selSection}
-        header={`${String(id).padStart(2, '0')}. Projects`}
+        header={`${String(id + 1).padStart(2, '0')}. Projects`}
         orientation={`left`}
         appColor={appColor}
       >

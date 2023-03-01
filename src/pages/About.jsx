@@ -9,7 +9,7 @@ function About({ aboutRef, id, selSection, appColor }) {
       <SectionBorder
         id={id}
         selSection={selSection}
-        header={`${String(id).padStart(2, '0')}. About`}
+        header={`${String(id + 1).padStart(2, '0')}. About`}
         orientation={`left`}
         appColor={appColor}
       >

@@ -34,18 +34,34 @@ function Experience({ expRef, id, selSection, appColor }) {
     {
       listId: 0,
       companyName: 'DenoGres',
+      timeWorked: '2022 - Present',
+      description: [
+        'Developed a comprehensive ORM library for the Deno runtime (Node.js), allowing developers to fully interact with SQL databases without having to parse query strings',
+        'Designed a bi-directional synchronization between model classes and database schema, ensuring that Model classes subscribe to changes made to the underlying database schema.',
+        'Constructed a graphical interface using Deno’s Fresh.js full stack framework (React and Tailwind), allowing users to test and run queries directly off the CLI/browser',
+      ],
     },
     {
       listId: 1,
       companyName: 'Arup',
+      timeWorked: '2019 - 2021',
+      description: [
+        'Led budgeting, forecasting and annual planning processes for the Americas region (>450M revenue annually)',
+        'Served as lead on regional strategic planning/business intelligence initiatives for C-suite team (CFO, COO, CEO)',
+        'Collected data from Azure SQL data warehouse, created Power BI data models, and summarized data into KPI dashboards tracking project and office level financial metrics',
+      ],
     },
     {
       listId: 2,
       companyName: 'Talend',
+      timeWorked: '2016 - 2019',
+      description: [],
     },
     {
       listId: 3,
       companyName: 'Genesys',
+      timeWorked: '2014 - 2016',
+      description: [],
     },
   ];
 
@@ -79,7 +95,7 @@ function Experience({ expRef, id, selSection, appColor }) {
       <SectionBorder
         id={id}
         selSection={selSection}
-        header={`${String(id).padStart(2, '0')}. Experience`}
+        header={`${String(id + 1).padStart(2, '0')}. Experience`}
         orientation={`right`}
         appColor={appColor}
       >
@@ -91,27 +107,16 @@ function Experience({ expRef, id, selSection, appColor }) {
         <div className='flex flex-row w-9/12 mx-auto'>
           <div className='flex flex-col w-5/12'>{workplacesComponents}</div>
           <div className={`border ${appColor[id].borderColor} w-full p-6`}>
-            <div className='flex flex-row justify-between mb-6 text-lg font-bold'>
-              <h2>DenoGres</h2>
-              <p>2022 - Present</p>
+            <div className='flex flex-row justify-between mb-2 text-lg font-bold'>
+              <h2>{currentWP[0].companyName}</h2>
+              <p>{currentWP[0].timeWorked}</p>
             </div>
             <ul className='text-xs text-justify list-disc list-inside'>
-              <li className='mb-3'>
-                Developed a comprehensive ORM library for the Deno runtime
-                (Node.js), allowing developers to fully interact with SQL
-                databases without needing to parse query strings
-              </li>
-              <li className='mb-3'>
-                Established bi-directional data flow between model classes and
-                database schema, establishing a consistent “source of truth”
-                data model and negating potential synchronization issues between
-                sources
-              </li>{' '}
-              <li className='mb-3'>
-                Constructed a graphical interface using Deno’s Fresh.js full
-                stack framework (React and Tailwind), allowing users to test and
-                and run queries via the browser
-              </li>
+              {currentWP[0].description.map((ele, idx) => (
+                <li key={idx} className='p-2'>
+                  {ele}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
