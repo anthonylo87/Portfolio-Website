@@ -97,14 +97,14 @@ function Experience({ id }) {
         orientation={`right`}
         appColor={appColor}
       >
-        <h3 className='font-bold text-4xl my-auto mx-4 text-justify'>
+        <h3 className='font-bold text-4xl my-auto text-left'>
           My Professional Experience <br />
         </h3>
-        <br />
-        <br />
-        <div className='flex flex-row w-9/12 mx-auto'>
-          <div className='flex flex-col w-5/12'>{workplacesComponents}</div>
-          <div className={`border ${appColor[id].borderColor} w-full p-6`}>
+        <div className='flex flex-col'>
+          <div className='flex flex-row overflow-x-scroll lg:overflow-x-visible w-[300px] md:w-full'>
+            {workplacesComponents}
+          </div>
+          <div className={`border ${appColor[id].borderColor} p-6 lg:mr-6`}>
             <div className='flex flex-row justify-between mb-2 text-lg font-bold'>
               <h2>{currentWP[0].companyName}</h2>
               <p>{currentWP[0].timeWorked}</p>

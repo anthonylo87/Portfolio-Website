@@ -1,8 +1,14 @@
 function SectionContainer({ children, bgColor }) {
   return (
-    <div className='w-screen h-screen snap-start'>
-      <section className={`h-full w-full ${bgColor}`}>{children}</section>
-    </div>
+    <>
+      {/*
+      mult-line
+      test
+    */}
+      <section className={`h-screen w-screen snap-start ${bgColor}`}>
+        {children}
+      </section>
+    </>
   );
 }
 export default SectionContainer;

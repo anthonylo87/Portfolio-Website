@@ -7,7 +7,7 @@ function About({ id }) {
 
   return (
     <div
-      className={`h-full flex max-w-screen-xl m-auto lg: ${appColor[id].textColor}`}
+      className={`h-full flex max-w-screen-xl m-auto lg:${appColor[id].textColor}`}
       ref={aboutRef}
     >
       <SectionBorder
@@ -19,10 +19,9 @@ function About({ id }) {
       >
         <div className='flex flex-col md:flex-row'>
           <div
-            className={
-              'my-auto text-justify p-6 w-full lg:w-1/2 lg:mx-4 lg:px-6' +
-              (selSection === id && ' motion-safe:animate-fadeUp')
-            }
+            className={`my-auto text-justify p-6 w-full lg:w-1/2 lg:mx-4 lg:px-6 ${
+              selSection === id ? `motion-safe:animate-fadeUp` : ``
+            }`}
           >
             <h3 className='font-bold text-4xl'>
               Hi, I'm... <br />
@@ -53,9 +52,9 @@ function About({ id }) {
               art!
             </p>
           </div>
-          <div className='mx-auto my-auto'>
+          <div className='mx-auto my-auto invisible md:visible '>
             <img
-              className='mx-auto rounded-full min-w-[325px] w-[325px]'
+              className='mx-auto rounded-full w-0 md:min-w-[350px] md:w-[350px]'
               src='src/images/Profile.jpeg'
               alt='profile picture'
             />

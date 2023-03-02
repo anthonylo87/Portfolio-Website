@@ -18,10 +18,10 @@ function Projects({ id }) {
         orientation={`left`}
         appColor={appColor}
       >
-        <h3 className='font-bold text-4xl my-auto mx-4 text-justify'>
+        <h3 className='font-bold text-4xl my-auto text-justify'>
           Featured Projects
         </h3>
-        <div className='w-full flex flex-row gap-4 my-6 mx-4'>
+        <div className='w-full h-[450px] lg:h-[375px] flex flex-col overflow-y-scroll lg:overflow-y-hidden gap-4 my-auto lg:flex-row '>
           <ProjectCard id={id} src='src/images/denogres.gif' />
           <ProjectCard id={id} src='src/images/axolotlbeats.png' />
           <ProjectCard id={id} src='src/images/codepears.png' />
