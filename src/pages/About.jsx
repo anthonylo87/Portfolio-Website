@@ -3,7 +3,7 @@ import SectionBorder from '../Layouts/SectionBorder';
 function About({ aboutRef, id, selSection, appColor }) {
   return (
     <div
-      className={`h-full flex max-w-screen-xl m-auto ${appColor[id].textColor}`}
+      className={`h-full flex max-w-screen-xl m-auto lg: ${appColor[id].textColor}`}
       ref={aboutRef}
     >
       <SectionBorder
@@ -13,10 +13,10 @@ function About({ aboutRef, id, selSection, appColor }) {
         orientation={`left`}
         appColor={appColor}
       >
-        <div className='flex flex-col lg:flex-row'>
+        <div className='flex flex-col md:flex-row'>
           <div
             className={
-              'my-auto text-justify py-6 w-full lg:w-1/2 lg:mx-4 lg:px-6' +
+              'my-auto text-justify p-6 w-full lg:w-1/2 lg:mx-4 lg:px-6' +
               (selSection === id && ' motion-safe:animate-fadeUp')
             }
           >
@@ -49,9 +49,9 @@ function About({ aboutRef, id, selSection, appColor }) {
               art!
             </p>
           </div>
-          <div className='w-1/2 mx-auto my-auto'>
+          <div className='mx-auto my-auto'>
             <img
-              className='mx-auto rounded-full'
+              className='mx-auto rounded-full min-w-[350px] w-[350px]'
               src='src/images/Profile.jpeg'
               alt='profile picture'
             />

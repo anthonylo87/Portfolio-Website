@@ -41,8 +41,6 @@ function App() {
   };
 
   const changeColor = () => {
-    console.log(window.innerHeight);
-
     let height = window.innerHeight;
     if (window.scrollY >= 2 * height) {
       setColor(appColor[2].textColor);
@@ -55,8 +53,6 @@ function App() {
       setSelSection(0);
     }
   };
-
-  // const boxWrapper = document.querySelector('#box-wrapper');
 
   function handleScroll(e) {
     const innerHeight = window.innerHeight;
@@ -75,7 +71,7 @@ function App() {
   }
 
   return (
-    <div className='App flex flex-row justify-center text-xs md:text-base'>
+    <div className='App flex flex-row justify-center text-xs md:text-sm'>
       <MainContainer>
         <DotNav
           selSection={selSection}

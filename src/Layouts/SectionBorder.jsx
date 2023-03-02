@@ -7,14 +7,14 @@ function SectionBorder({
   appColor,
 }) {
   return (
-    <div className='h-min my-auto'>
-      <div className='text-left w-full my-auto'>
+    <div className='h-5/6 m:h-4/6 my-auto'>
+      <div className='text-left w-full h-full flex flex-col justify-center my-auto lg:p-16'>
         <div>
           <div className='flex flex-row'>
-            <div className='my-auto m-8 w-full text-justify'>
+            <div className='my-auto mx-8 w-full text-justify'>
               <div
                 className={
-                  `flex flex-row py-4 lg:py-0` +
+                  `flex flex-row py-2 lg:py-0` +
                   (orientation === 'right' ? ` justify-end` : ``)
                 }
               >
@@ -52,7 +52,7 @@ function SectionBorder({
               </div>
               <div
                 className={
-                  `lg:my-2 xl:p-16 opacity-0 ${appColor[id].borderColor} ${
+                  `lg:my-1 xl:p-8 opacity-0 ${appColor[id].borderColor} ${
                     id === selSection ? `motion-safe:animate-fadeIn` : ``
                   } ` + (orientation === `left` ? `lg:border-l` : `lg:border-r`)
                 }
