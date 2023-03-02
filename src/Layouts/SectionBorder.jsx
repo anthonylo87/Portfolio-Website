@@ -14,7 +14,7 @@ function SectionBorder({
   return (
     <div className='text-left justify-center mx-8 lg:p-16'>
       <div className='flex flex-row'>
-        <div className='my-auto text-justify'>
+        <div className='my-auto text-justify grow'>
           <div
             className={`flex flex-row py-2 lg:py-0 ${
               id === selSection ? animateBorder : ``
