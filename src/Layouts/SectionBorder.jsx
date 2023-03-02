@@ -46,16 +46,23 @@ function SectionBorder({
                 />
               </div>
             </div>
-            <div
-              className={
-                `flex flex-col gap-8 lg:my-1 lg:p-8 opacity-0 animation-delay-900 ${
-                  appColor[id].borderColor
-                } ${
-                  id === selSection ? `motion-safe:animate-fadeBorderUp` : ``
-                } ` + (orientation === `left` ? `lg:border-l` : `lg:border-r`)
-              }
-            >
-              {children}
+            <div className='flex flex-row'>
+              <div
+                className={
+                  `opacity-0 animation-delay-300 lg:w-1 ${
+                    appColor[id].borderColor
+                  } ${
+                    id === selSection ? `motion-safe:animate-fadeBorderUp` : ``
+                  } ` + (orientation === `left` ? `lg:border-l` : `lg:border-r`)
+                }
+              ></div>
+              <div
+                className={`flex flex-col gap-8 opacity-0 animation-delay-600 lg:my-1 lg:p-8 ${
+                  id === selSection ? `motion-safe: animate-fadeIn` : ``
+                }`}
+              >
+                {children}
+              </div>
             </div>
           </div>
         </div>
