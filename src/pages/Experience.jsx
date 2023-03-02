@@ -1,17 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { appContext } from '../providers/appProvider';
 import SectionBorder from '../Layouts/SectionBorder';
 
-function ListItem({
-  id,
-  listId,
-  currentItem,
-  setCurrentItem,
-  children,
-  appColor,
-}) {
+function ListItem({ id, listId, currentItem, setCurrentItem, children }) {
+  const { appColor } = useContext(appContext);
+
   function handleClick() {
     setCurrentItem(listId);
   }
+
   return (
     <button
       className={`mb-2 mr-3 p-3 text-center text-sm uppercase font-bold border ${
@@ -29,7 +26,9 @@ function ListItem({
   );
 }
 
-function Experience({ expRef, id, selSection, appColor }) {
+function Experience({ id }) {
+  const { expRef, selSection, appColor } = useContext(appContext);
+
   const workHistory = [
     {
       listId: 0,
@@ -77,7 +76,6 @@ function Experience({ expRef, id, selSection, appColor }) {
   const workplacesComponents = workHistory.map((ele, idx) => (
     <ListItem
       id={id}
-      appColor={appColor}
       listId={ele.listId}
       key={ele.listId}
       currentItem={currentItem}

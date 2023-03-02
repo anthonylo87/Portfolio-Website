@@ -1,7 +1,11 @@
-function Dot({ bgFill, borderColor, id, selSection, refType }) {
-  const scrollIntoView = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
+import { useContext } from 'react';
+import { appContext } from '../providers/appProvider';
+
+function Dot({ id, refType }) {
+  const { selSection, appColor, scrollIntoView } = useContext(appContext);
+
+  const bgFill = appColor[selSection].bgFill;
+  const borderColor = appColor[selSection].borderColor;
 
   return (
     <button
@@ -13,43 +17,15 @@ function Dot({ bgFill, borderColor, id, selSection, refType }) {
   );
 }
 
-function DotNav({
-  selSection,
-  borderColor,
-  bgFill,
-  aboutRef,
-  expRef,
-  projectRef,
-}) {
+function DotNav() {
+  const { aboutRef, expRef, projectRef } = useContext(appContext);
+
   return (
     <nav className='fixed inset-y-0 left-6 flex flex-col justify-center invisible lg:visible'>
-      <Dot
-        id={0}
-        selSection={selSection}
-        bgFill={bgFill}
-        borderColor={borderColor}
-        refType={aboutRef}
-      />
-      <Dot
-        id={1}
-        selSection={selSection}
-        bgFill={bgFill}
-        borderColor={borderColor}
-        refType={expRef}
-      />
-      <Dot
-        id={2}
-        selSection={selSection}
-        bgFill={bgFill}
-        borderColor={borderColor}
-        refType={projectRef}
-      />
-      <Dot
-        id={3}
-        selSection={selSection}
-        bgFill={bgFill}
-        borderColor={borderColor}
-      />
+      <Dot id={0} refType={aboutRef} />
+      <Dot id={1} refType={expRef} />
+      <Dot id={2} refType={projectRef} />
+      <Dot id={3} />
     </nav>
   );
 }

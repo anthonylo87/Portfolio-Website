@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { appContext } from '../providers/appProvider';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
@@ -12,7 +14,8 @@ function Icon({ children, href }) {
   );
 }
 
-function Socials({ color }) {
+function Socials() {
+  const { color } = useContext(appContext);
   return (
     <nav
       className={`flex flex-col py-1 fixed bottom-32 right-6 gap-4 ${color} invisible lg:visible`}

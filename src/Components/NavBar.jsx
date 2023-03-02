@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { appContext } from '../providers/appProvider';
 
 function NavLink({ children, refType }) {
-  const scrollIntoView = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { scrollIntoView } = useContext(appContext);
 
   return (
     <li className='p-3'>
@@ -17,7 +16,9 @@ function NavLink({ children, refType }) {
   );
 }
 
-function NavBar({ aboutRef, expRef, projectRef, contactRef, color }) {
+function NavBar() {
+  const { aboutRef, expRef, projectRef, color } = useContext(appContext);
+
   const scrollIntoView = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };

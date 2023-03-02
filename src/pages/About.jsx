@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { appContext } from '../providers/appProvider';
 import SectionBorder from '../Layouts/SectionBorder';
 
-function About({ aboutRef, id, selSection, appColor }) {
+function About({ id }) {
+  const { aboutRef, selSection, appColor } = useContext(appContext);
+
   return (
     <div
       className={`h-full flex max-w-screen-xl m-auto lg: ${appColor[id].textColor}`}
@@ -51,7 +55,7 @@ function About({ aboutRef, id, selSection, appColor }) {
           </div>
           <div className='mx-auto my-auto'>
             <img
-              className='mx-auto rounded-full min-w-[350px] w-[350px]'
+              className='mx-auto rounded-full min-w-[325px] w-[325px]'
               src='src/images/Profile.jpeg'
               alt='profile picture'
             />

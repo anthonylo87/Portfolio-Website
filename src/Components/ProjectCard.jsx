@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { appContext } from '../providers/appProvider';
 
-function ProjectCard({ src, id, appColor }) {
+function ProjectCard({ src, id }) {
+  const { appColor } = useContext(appContext);
+
   const [hover, setHover] = useState(false);
 
   return (
