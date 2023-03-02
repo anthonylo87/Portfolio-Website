@@ -8,7 +8,7 @@ function Projects({ id }) {
 
   return (
     <div
-      className={`h-full flex flex-col max-w-screen-2xl m-auto ${appColor[id].textColor}`}
+      className={`max-w-screen-2xl m-auto ${appColor[id].textColor}`}
       ref={projectRef}
     >
       <SectionBorder
@@ -18,13 +18,17 @@ function Projects({ id }) {
         orientation={`left`}
         appColor={appColor}
       >
-        <h3 className='font-bold text-4xl my-auto text-justify'>
-          Featured Projects
-        </h3>
-        <div className='w-full h-[450px] lg:h-[375px] flex flex-col overflow-y-scroll lg:overflow-y-hidden gap-4 my-auto lg:flex-row '>
-          <ProjectCard id={id} src='src/images/denogres.gif' />
-          <ProjectCard id={id} src='src/images/axolotlbeats.png' />
-          <ProjectCard id={id} src='src/images/codepears.png' />
+        <div className='mx-0 md:w-[600px] lg:w-[1200px]'>
+          <div className='w-full flex flex-col gap-4 lg:overflow-y-hidden gap-4 lg:my-10'>
+            <h3 className='font-bold text-4xl text-justify'>
+              Featured Projects
+            </h3>
+            <div className='h-[500px] overflow-y-scroll md:overflow-y-hidden md:flex md:flex-row'>
+              <ProjectCard id={id} src='src/images/denogres.gif' />
+              <ProjectCard id={id} src='src/images/axolotlbeats.png' />
+              <ProjectCard id={id} src='src/images/codepears.png' />
+            </div>
+          </div>
         </div>
       </SectionBorder>
     </div>

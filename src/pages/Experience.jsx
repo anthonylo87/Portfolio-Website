@@ -11,7 +11,7 @@ function ListItem({ id, listId, currentItem, setCurrentItem, children }) {
 
   return (
     <button
-      className={`mb-2 mr-3 p-3 text-center text-sm uppercase font-bold border ${
+      className={`p-2 text-center text-xs uppercase font-bold border lg:p-3 lg:text-sm ${
         appColor[id].borderColor
       }  ${
         listId === currentItem
@@ -73,7 +73,7 @@ function Experience({ id }) {
     setCurrentWP(workHistory.filter((ele) => ele.listId === currentItem));
   }, [currentItem]);
 
-  const workplacesComponents = workHistory.map((ele, idx) => (
+  const workplaceLinks = workHistory.map((ele, idx) => (
     <ListItem
       id={id}
       listId={ele.listId}
@@ -87,7 +87,7 @@ function Experience({ id }) {
 
   return (
     <div
-      className={`h-full flex flex-col max-w-screen-xl m-auto ${appColor[id].textColor}`}
+      className={`max-w-screen-xl m-auto ${appColor[id].textColor}`}
       ref={expRef}
     >
       <SectionBorder
@@ -101,10 +101,10 @@ function Experience({ id }) {
           My Professional Experience <br />
         </h3>
         <div className='flex flex-col'>
-          <div className='flex flex-row overflow-x-scroll lg:overflow-x-visible w-[300px] md:w-full'>
-            {workplacesComponents}
-          </div>
-          <div className={`border ${appColor[id].borderColor} p-6 lg:mr-6`}>
+          <nav className='flex flex-row my-2 gap-2 md:w-full justify-center lg:justify-start'>
+            {workplaceLinks}
+          </nav>
+          <div className={`border ${appColor[id].borderColor} p-6`}>
             <div className='flex flex-row justify-between mb-2 text-lg font-bold'>
               <h2>{currentWP[0].companyName}</h2>
               <p>{currentWP[0].timeWorked}</p>

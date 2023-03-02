@@ -7,10 +7,11 @@ function ProjectCard({ src, id }) {
   const [hover, setHover] = useState(false);
 
   return (
-    <img
-      src={src}
-      alt='test picture'
-      className={`lg:h-[250px] xl:h-[350px] aspect-auto border ${appColor[id].borderColor} p-2`}
+    <div
+      style={{
+        backgroundImage: `url(${src})`,
+      }}
+      className={`h-[300px] bg-cover w-full my-2 md:my-0 lg:w-5/6 lg:m-2`}
     />
   );
 }

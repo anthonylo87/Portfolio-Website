@@ -5,7 +5,9 @@ function SectionContainer({ children, bgColor }) {
       mult-line
       test
     */}
-      <section className={`h-screen w-screen snap-start ${bgColor}`}>
+      <section
+        className={`h-screen w-screen flex flex-col justify-center snap-start ${bgColor}`}
+      >
         {children}
       </section>
     </>

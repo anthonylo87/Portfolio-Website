@@ -1,4 +1,4 @@
 function MainContainer({ children, bgColor }) {
-  return <main className='flex flex-col w-full'>{children}</main>;
+  return <main className='flex flex-col w-screen'>{children}</main>;
 }
 export default MainContainer;

@@ -7,7 +7,7 @@ function About({ id }) {
 
   return (
     <div
-      className={`h-full flex max-w-screen-xl m-auto lg:${appColor[id].textColor}`}
+      className={`max-w-screen-xl m-auto ${appColor[id].textColor}`}
       ref={aboutRef}
     >
       <SectionBorder
@@ -17,9 +17,9 @@ function About({ id }) {
         orientation={`left`}
         appColor={appColor}
       >
-        <div className='flex flex-col md:flex-row'>
+        <div className='flex flex-col md:flex-row md:gap-6'>
           <div
-            className={`my-auto text-justify p-6 w-full lg:w-1/2 lg:mx-4 lg:px-6 ${
+            className={`my-auto text-justify w-full max-w-xl lg:w-1/2 lg:mx-4 lg:px-6 ${
               selSection === id ? `motion-safe:animate-fadeUp` : ``
             }`}
           >
