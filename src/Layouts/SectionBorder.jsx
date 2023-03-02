@@ -11,15 +11,15 @@ function SectionBorder({
       <div className='text-left w-full my-auto'>
         <div>
           <div className='flex flex-row'>
-            <div className='my-auto mx-4 w-full text-justify'>
+            <div className='my-auto m-8 w-full text-justify'>
               <div
                 className={
-                  `flex flex-row` +
+                  `flex flex-row py-4 lg:py-0` +
                   (orientation === 'right' ? ` justify-end` : ``)
                 }
               >
                 {orientation === 'right' && (
-                  <div className='w-1/2 '>
+                  <div className='w-full lg:w-1/2'>
                     <hr
                       className={`my-3 mx-3 opacity-0 ${
                         id === selSection
@@ -31,15 +31,17 @@ function SectionBorder({
                     />
                   </div>
                 )}
-                <h2
-                  className={`font-bold opacity-0 ${
-                    id === selSection ? `motion-safe:animate-fadeIn` : ``
-                  }`}
-                >
-                  {header}
-                </h2>
+                <div className='flex flex-col justify-center'>
+                  <h2
+                    className={`font-bold opacity-0 ${
+                      id === selSection ? `motion-safe:animate-fadeIn` : ``
+                    }`}
+                  >
+                    {header}
+                  </h2>
+                </div>
                 {orientation === 'left' && (
-                  <div className='w-1/2'>
+                  <div className='grow lg:w-1/2'>
                     <hr
                       className={`my-3 mx-3 opacity-0 ${id === selSection} ${
                         id === selSection ? `motion-safe:animate-fadeIn` : ``
@@ -50,9 +52,9 @@ function SectionBorder({
               </div>
               <div
                 className={
-                  `my-2 p-8 opacity-0 ${appColor[id].borderColor} ${
+                  `lg:my-2 xl:p-16 opacity-0 ${appColor[id].borderColor} ${
                     id === selSection ? `motion-safe:animate-fadeIn` : ``
-                  } ` + (orientation === `left` ? `border-l` : `border-r`)
+                  } ` + (orientation === `left` ? `lg:border-l` : `lg:border-r`)
                 }
               >
                 {children}

@@ -41,6 +41,8 @@ function App() {
   };
 
   const changeColor = () => {
+    console.log(window.innerHeight);
+
     let height = window.innerHeight;
     if (window.scrollY >= 2 * height) {
       setColor(appColor[2].textColor);
@@ -54,10 +56,26 @@ function App() {
     }
   };
 
-  window.addEventListener('scroll', changeColor);
+  // const boxWrapper = document.querySelector('#box-wrapper');
+
+  function handleScroll(e) {
+    const innerHeight = window.innerHeight;
+    const scrollTop = e.currentTarget.scrollTop;
+
+    if (scrollTop >= 2 * innerHeight) {
+      setColor(appColor[2].textColor);
+      setSelSection(2);
+    } else if (scrollTop >= innerHeight) {
+      setColor(appColor[1].textColor);
+      setSelSection(1);
+    } else {
+      setColor(appColor[0].textColor);
+      setSelSection(0);
+    }
+  }
 
   return (
-    <div className='App flex flex-row justify-center'>
+    <div className='App flex flex-row justify-center text-xs md:text-base'>
       <MainContainer>
         <DotNav
           selSection={selSection}
@@ -74,30 +92,35 @@ function App() {
           expRef={expRef}
           projectRef={projectRef}
         />
-        <SectionContainer bgColor={appColor[0].background}>
-          <About
-            aboutRef={aboutRef}
-            id={0}
-            selSection={selSection}
-            appColor={appColor}
-          />
-        </SectionContainer>
-        <SectionContainer bgColor={appColor[1].background}>
-          <Experience
-            expRef={expRef}
-            id={1}
-            selSection={selSection}
-            appColor={appColor}
-          />
-        </SectionContainer>
-        <SectionContainer bgColor={appColor[2].background}>
-          <Projects
-            projectRef={projectRef}
-            id={2}
-            selSection={selSection}
-            appColor={appColor}
-          />
-        </SectionContainer>
+        <div
+          onScroll={handleScroll}
+          className='h-screen snap-y snap-mandatory overflow-scroll'
+        >
+          <SectionContainer bgColor={appColor[0].background}>
+            <About
+              aboutRef={aboutRef}
+              id={0}
+              selSection={selSection}
+              appColor={appColor}
+            />
+          </SectionContainer>
+          <SectionContainer bgColor={appColor[1].background}>
+            <Experience
+              expRef={expRef}
+              id={1}
+              selSection={selSection}
+              appColor={appColor}
+            />
+          </SectionContainer>
+          <SectionContainer bgColor={appColor[2].background}>
+            <Projects
+              projectRef={projectRef}
+              id={2}
+              selSection={selSection}
+              appColor={appColor}
+            />
+          </SectionContainer>
+        </div>
       </MainContainer>
     </div>
   );

@@ -22,7 +22,7 @@ function DotNav({
   projectRef,
 }) {
   return (
-    <nav className='fixed inset-y-0 left-12 flex flex-col justify-center'>
+    <nav className='fixed inset-y-0 left-6 flex flex-col justify-center invisible lg:visible'>
       <Dot
         id={0}
         selSection={selSection}

@@ -1,4 +1,8 @@
 function SectionContainer({ children, bgColor }) {
-  return <section className={`h-screen ` + bgColor}>{children}</section>;
+  return (
+    <div className='h-screen snap-start'>
+      <section className={`h-full w-full ${bgColor}`}>{children}</section>
+    </div>
+  );
 }
 export default SectionContainer;

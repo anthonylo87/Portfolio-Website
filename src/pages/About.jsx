@@ -13,16 +13,16 @@ function About({ aboutRef, id, selSection, appColor }) {
         orientation={`left`}
         appColor={appColor}
       >
-        <div className='flex flex-row'>
+        <div className='flex flex-col lg:flex-row'>
           <div
             className={
-              'my-auto mx-4 text-justify w-1/2' +
+              'my-auto text-justify py-6 w-full lg:w-1/2 lg:mx-4 lg:px-6' +
               (selSection === id && ' motion-safe:animate-fadeUp')
             }
           >
             <h3 className='font-bold text-4xl'>
               Hi, I'm... <br />
-              <strong className='font-bold text-8xl bg-gradient-to-r from-beaver-700 via-nepal-600 to-nepal-500 text-transparent bg-clip-text'>
+              <strong className='font-bold text-5xl xl:text-8xl bg-gradient-to-r from-beaver-700 via-nepal-600 to-nepal-500 text-transparent bg-clip-text'>
                 &nbsp; Anthony.
               </strong>
             </h3>
@@ -49,11 +49,10 @@ function About({ aboutRef, id, selSection, appColor }) {
               art!
             </p>
           </div>
-          <div className='w-1/2 my-auto'>
+          <div className='w-1/2 mx-auto my-auto'>
             <img
               className='mx-auto rounded-full'
               src='src/images/Profile.jpeg'
-              width={400}
               alt='profile picture'
             />
           </div>

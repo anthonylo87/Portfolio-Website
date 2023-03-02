@@ -14,7 +14,9 @@ function Icon({ children, href }) {
 
 function Socials({ color }) {
   return (
-    <nav className={`flex flex-col fixed right-12 bottom-48 gap-4 ${color}`}>
+    <nav
+      className={`flex flex-col py-1 fixed bottom-32 right-6 gap-4 ${color} invisible lg:visible`}
+    >
       <Icon href='https://www.linkedin.com/in/anthonyelo/'>
         <LinkedInIcon fontSize='inherit' />
       </Icon>
