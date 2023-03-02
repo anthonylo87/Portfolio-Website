@@ -87,7 +87,7 @@ function Experience({ id }) {
 
   return (
     <div
-      className={`max-w-screen-xl m-auto ${appColor[id].textColor}`}
+      className={`w-full lg:w-5/6 max-w-screen-xl m-auto ${appColor[id].textColor}`}
       ref={expRef}
     >
       <SectionBorder
