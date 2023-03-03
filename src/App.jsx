@@ -8,6 +8,7 @@ import Socials from './components/Socials';
 import About from './pages/About';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
           </SectionContainer>
           <SectionContainer bgColor={appColor[2].background}>
             <Projects id={2} />
+          </SectionContainer>
+          <SectionContainer bgColor={appColor[3].background}>
+            <Contact id={3} />
           </SectionContainer>
         </div>
       </MainContainer>

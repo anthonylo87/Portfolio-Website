@@ -30,7 +30,12 @@ export function AppProvider({ children }) {
       borderColor: 'border-nepal-900',
       bgFill: 'bg-nepal-900',
     },
-    3: {},
+    3: {
+      background: 'bg-beaver-900',
+      textColor: 'text-beaver-200',
+      borderColor: 'border-beaver-200',
+      bgFill: 'bg-beaver-200',
+    },
   };
 
   const scrollIntoView = (ref) => {
@@ -39,7 +44,10 @@ export function AppProvider({ children }) {
 
   const changeColor = () => {
     let height = window.innerHeight;
-    if (window.scrollY >= 2 * height) {
+    if (window.scrollY >= 3 * height) {
+      setColor(appColor[3].textColor);
+      setSelSection(3);
+    } else if (window.scrollY >= 2 * height) {
       setColor(appColor[2].textColor);
       setSelSection(2);
     } else if (window.scrollY >= height) {
@@ -55,7 +63,10 @@ export function AppProvider({ children }) {
     const innerHeight = window.innerHeight;
     const scrollTop = e.currentTarget.scrollTop;
 
-    if (scrollTop >= 2 * innerHeight) {
+    if (scrollTop >= 3 * innerHeight) {
+      setColor(appColor[3].textColor);
+      setSelSection(3);
+    } else if (scrollTop >= 2 * innerHeight) {
       setColor(appColor[2].textColor);
       setSelSection(2);
     } else if (scrollTop >= innerHeight) {

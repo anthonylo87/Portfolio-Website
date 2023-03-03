@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { appContext } from '../providers/appProvider';
 import SectionBorder from '../Layouts/SectionBorder';
 import ProjectCard from '../components/ProjectCard';

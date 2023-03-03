@@ -17,19 +17,17 @@ function NavLink({ children, refType }) {
 }
 
 function NavBar() {
-  const { aboutRef, expRef, projectRef, color } = useContext(appContext);
-
-  const scrollIntoView = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { aboutRef, expRef, projectRef, contactRef, color, scrollIntoView } =
+    useContext(appContext);
 
   return (
     <nav className={`fixed inset-x-0 top-0 w-full font-bold ${color}`}>
-      <div className='max-w-7xl m-auto flex flex-row justify-end'>
+      <div className='max-w-7xl m-auto flex flex-row justify-center lg:justify-end'>
         <ul className='flex flex-row'>
           <NavLink refType={aboutRef}>01. About</NavLink>
           <NavLink refType={expRef}>02. Experience</NavLink>
           <NavLink refType={projectRef}>03. Projects</NavLink>
+          <NavLink refType={contactRef}>04. Contact</NavLink>
         </ul>
       </div>
     </nav>
