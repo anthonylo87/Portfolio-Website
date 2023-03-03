@@ -2,19 +2,22 @@
   "name": "portfolio-website",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "dev": "vite",
+    "start": "clear && concurrently 'vite' 'node ./server/server.js'",
+    "dev": "clear && concurrently 'vite' 'nodemon ./server/server.js'",
     "build": "vite build",
-    "preview": "vite preview"
+    "serve": "npm run build && node ./server/server.js"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.9",
-    "@mui/material": "^5.11.10",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

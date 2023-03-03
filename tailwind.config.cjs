@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       animation: {
         fadeIn: 'fadeIn 1s ease-in forwards',
-        fadeUp: 'fadeUp 1s ease-in forwards',
+        fadeBorderUp: 'fadeBorderUp 1s ease-in forwards',
+        fadeBorderLeft: 'fadeBorderLeft 1s ease-in forwards',
+        fadeBorderRight: 'fadeBorderRight 1s ease-in forwards',
+        fadeBorderDown: 'fadeBorderDown 1s ease-in forwards',
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
       keyframes: {
@@ -13,9 +16,21 @@ module.exports = {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
-        fadeUp: {
-          '0%': { opacity: 0, transform: 'translateY(2rem)' },
+        fadeBorderUp: {
+          '0%': { opacity: 0, transform: 'translateY(5rem)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        fadeBorderLeft: {
+          '0%': { opacity: 0, transform: 'translateX(-5rem)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
+        fadeBorderRight: {
+          '0%': { opacity: 0, transform: 'translateX(5rem)' },
+          '100%': { opacity: 1, transform: 'translateX(0rem)' },
+        },
+        fadeBorderDown: {
+          '0%': { opacity: 0, transform: 'translateY(-5rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0rem)' },
         },
         wiggle: {
           '0%, 100%': {
@@ -84,5 +99,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('./plugins/animationDelay.cjs')],
 };

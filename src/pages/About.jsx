@@ -1,42 +1,46 @@
+import { useContext } from 'react';
+import { appContext } from '../providers/appProvider';
 import SectionBorder from '../Layouts/SectionBorder';
 
-function About({ aboutRef, id, selSection, appColor }) {
+function About({ id }) {
+  const { aboutRef, selSection, appColor } = useContext(appContext);
+
   return (
     <div
-      className={`h-full flex max-w-screen-xl m-auto ${appColor[id].textColor}`}
+      className={`w-full lg:w-5/6 max-w-screen-xl m-auto ${appColor[id].textColor}`}
       ref={aboutRef}
     >
       <SectionBorder
         id={id}
         selSection={selSection}
-        header={`${String(id).padStart(2, '0')}. About`}
+        header={`${String(id + 1).padStart(2, '0')}. About`}
         orientation={`left`}
         appColor={appColor}
       >
-        <div className='flex flex-row'>
+        <div className='flex flex-col md:flex-row md:gap-6'>
           <div
-            className={
-              'my-auto mx-4 text-justify w-1/2' +
-              (selSection === id && ' motion-safe:animate-fadeUp')
-            }
+            className={`my-auto text-justify w-full max-w-xl lg:w-1/2 lg:mx-4 lg:px-6 ${
+              selSection === id ? `motion-safe:animate-fadeUp` : ``
+            }`}
           >
             <h3 className='font-bold text-4xl'>
               Hi, I'm... <br />
-              <strong className='font-bold text-8xl bg-gradient-to-r from-beaver-700 via-nepal-600 to-nepal-500 text-transparent bg-clip-text'>
-                &nbsp; Anthony.
+              <strong className='font-bold text-5xl xl:text-8xl bg-gradient-to-r from-beaver-700 via-nepal-600 to-nepal-500 text-transparent bg-clip-text'>
+                {' '}
+                Anthony.
               </strong>
             </h3>
             <p>
               <br />
-              <strong>
+              <strong className='text-2xl'>
                 I'm a full stack developer currently living in Los Angeles,
                 California.
               </strong>
               <br />
               <br />
               Most recently I co-developed a product called DenoGres &#40;open
-              source&#41;, an object relational mapper built for PostgreSQL for
-              use with Deno runtime.
+              source&#41;, an ORM tool built for PostgreSQL for use with Deno
+              runtime.
               <br />
               <br />
               My previous background is in utilizing data warehousing solutions
@@ -49,11 +53,10 @@ function About({ aboutRef, id, selSection, appColor }) {
               art!
             </p>
           </div>
-          <div className='w-1/2 my-auto'>
+          <div className='mx-auto my-auto invisible md:visible '>
             <img
-              className='mx-auto rounded-full'
+              className='mx-auto rounded-full w-0 md:min-w-[350px] md:w-[350px]'
               src='src/images/Profile.jpeg'
-              width={400}
               alt='profile picture'
             />
           </div>
