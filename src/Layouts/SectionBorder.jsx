@@ -57,7 +57,7 @@ function SectionBorder({
             ></div>
             <div
               className={`flex flex-col gap-8 w-full opacity-0 animation-delay-600 lg:my-1 md:p-8 ${
-                id === selSection ? `motion-safe: animate-fadeIn` : ``
+                id === selSection ? `motion-safe:animate-fadeIn` : ``
               }`}
             >
               {children}

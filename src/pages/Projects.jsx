@@ -19,6 +19,13 @@ function Projects({ id }) {
       ],
     },
     {
+      name: 'My Portfolio Website',
+      description:
+        'My personal page, showcasing projects that i have worked on',
+      link1: ['Github', 'https://github.com/anthonylo87/Portfolio-Website'],
+      link2: ['', ''],
+    },
+    {
       name: 'Axolotl Beats',
       description:
         'A playlist generator utilizing the spotify API to customize recommendations',
@@ -46,11 +53,11 @@ function Projects({ id }) {
         appColor={appColor}
       >
         <div className='mx-0'>
-          <div className='w-full flex flex-col gap-4 lg:overflow-y-hidden gap-4 lg:my-10'>
+          <div className='w-full flex flex-col gap-8 lg:overflow-y-hidden'>
             <h3 className='font-bold text-4xl text-justify'>
               Featured Projects
             </h3>
-            <div className='h-[400px] overflow-y-scroll lg:overflow-y-hidden lg:flex lg:flex-row lg:h-full'>
+            <div className='h-[425px] overflow-y-scroll lg:overflow-y-hidden lg:grid lg:grid-cols-2 lg:h-full lg:gap-4 lg:max-w-[1000px]'>
               <ProjectCard
                 id={id}
                 projID={0}
@@ -65,11 +72,19 @@ function Projects({ id }) {
                 currProj={currProj}
                 setCurrProj={setCurrProj}
                 projDescriptions={projDescriptions}
-                src='src/images/axolotlbeats.png'
+                src='src/images/portfolio.png'
               />
               <ProjectCard
                 id={id}
                 projID={2}
+                currProj={currProj}
+                setCurrProj={setCurrProj}
+                projDescriptions={projDescriptions}
+                src='src/images/axolotlbeats.png'
+              />
+              <ProjectCard
+                id={id}
+                projID={3}
                 currProj={currProj}
                 setCurrProj={setCurrProj}
                 projDescriptions={projDescriptions}

@@ -8,6 +8,7 @@ module.exports = {
         fadeBorderUp: 'fadeBorderUp 1s ease-in forwards',
         fadeBorderLeft: 'fadeBorderLeft 1s ease-in forwards',
         fadeBorderRight: 'fadeBorderRight 1s ease-in forwards',
+        fadeBorderDown: 'fadeBorderDown 1s ease-in forwards',
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
       keyframes: {
@@ -26,6 +27,10 @@ module.exports = {
         fadeBorderRight: {
           '0%': { opacity: 0, transform: 'translateX(5rem)' },
           '100%': { opacity: 1, transform: 'translateX(0rem)' },
+        },
+        fadeBorderDown: {
+          '0%': { opacity: 0, transform: 'translateY(-5rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0rem)' },
         },
         wiggle: {
           '0%, 100%': {
