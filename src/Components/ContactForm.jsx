@@ -1,40 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useContext } from 'react';
 import { appContext } from '../providers/appProvider';
+import emailjs from '@emailjs/browser';
 
-const ContactForm = ({ id }) => {
+const ContactForm = ({ id, setShowModal, setShowModalText }) => {
   const { appColor } = useContext(appContext);
+  const form = useRef();
 
   const [status, setStatus] = useState('Submit');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending');
-    const { name, email, message } = e.target.elements;
 
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
+    //add serviceID, templateID, publicKey to ENV
+    try {
+      let result = await emailjs.sendForm(
+        'service_vyg3as7',
+        'template_sqtpuby',
+        form.current,
+        'CK3eT10o0619zgOzr'
+      );
+      setShowModalText('Thank you - your email has been sent!');
+    } catch (e) {
+      console.log(e);
+      setShowModalText(
+        'There was an error sending your message - please contact the website admin at 87.anthonylo@gmail.com.'
+      );
+    }
 
-    //TODO: change fetch URL
-    let response = await fetch('http://localhost:5000/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify(details),
-    });
-
+    setShowModal(true);
+    e.target.reset();
     setStatus('Submit');
-
-    let result = await response.json();
-    alert(result.status);
   };
   return (
     <form
       className='flex flex-col gap-2 lg:gap-6 w-full max-w-3/4 motion-safe:animate-fadeIn'
+      ref={form}
       onSubmit={handleSubmit}
     >
       <div className='flex flex-col gap-2 lg:flex-row lg:gap-4'>
@@ -47,6 +49,7 @@ const ContactForm = ({ id }) => {
           className={`grow border ${appColor[id].borderColor} p-3 bg-inherit focus:outline-none`}
           type='text'
           id='name'
+          name='name'
           placeholder='Enter your name'
           required
         />
@@ -61,7 +64,8 @@ const ContactForm = ({ id }) => {
           className={`grow border ${appColor[id].borderColor} p-3 bg-inherit focus:outline-none`}
           type='email'
           id='email'
-          placeholder='Enter the subject'
+          name='email'
+          placeholder='Enter your email'
           required
         />
       </div>
@@ -74,6 +78,7 @@ const ContactForm = ({ id }) => {
         <textarea
           className={`grow border ${appColor[id].borderColor} p-3 bg-inherit resize-none focus:outline-none`}
           id='message'
+          name='message'
           rows='6'
           placeholder='Your message goes here'
           required
