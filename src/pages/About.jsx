@@ -26,20 +26,21 @@ function About({ id }) {
             <h3 className='font-bold text-4xl'>
               Hi, I'm... <br />
               <strong className='font-bold text-5xl xl:text-8xl bg-gradient-to-r from-beaver-700 via-nepal-600 to-nepal-500 text-transparent bg-clip-text'>
-                &nbsp; Anthony.
+                {' '}
+                Anthony.
               </strong>
             </h3>
             <p>
               <br />
-              <strong>
+              <strong className='text-2xl'>
                 I'm a full stack developer currently living in Los Angeles,
                 California.
               </strong>
               <br />
               <br />
               Most recently I co-developed a product called DenoGres &#40;open
-              source&#41;, an object relational mapper built for PostgreSQL for
-              use with Deno runtime.
+              source&#41;, an ORM tool built for PostgreSQL for use with Deno
+              runtime.
               <br />
               <br />
               My previous background is in utilizing data warehousing solutions

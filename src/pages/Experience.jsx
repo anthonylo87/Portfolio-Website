@@ -1,89 +1,11 @@
 import { useState, useEffect, useContext } from 'react';
 import { appContext } from '../providers/appProvider';
 import SectionBorder from '../Layouts/SectionBorder';
-
-function ListItem({ id, listId, currentItem, setCurrentItem, children }) {
-  const { appColor } = useContext(appContext);
-
-  function handleClick() {
-    setCurrentItem(listId);
-  }
-
-  return (
-    <button
-      className={`p-2 text-center text-xs uppercase font-bold border lg:p-3 lg:text-sm ${
-        appColor[id].borderColor
-      }  ${
-        listId === currentItem
-          ? `bg-raffia-200 text-raffia-800`
-          : `hover:bg-raffia-800 hover:underline hover:duration-300`
-      }
-      `}
-      onClick={handleClick}
-    >
-      {children}
-    </button>
-  );
-}
+// import { skillSet } from '../data/skills';
+import { skillSet } from '../data/skills';
 
 function Experience({ id }) {
   const { expRef, selSection, appColor } = useContext(appContext);
-
-  const workHistory = [
-    {
-      listId: 0,
-      companyName: 'DenoGres',
-      timeWorked: '2022 - Present',
-      description: [
-        'Developed a comprehensive ORM library for the Deno runtime (Node.js), allowing developers to fully interact with SQL databases without having to parse query strings',
-        'Designed a bi-directional synchronization between model classes and database schema, ensuring that Model classes subscribe to changes made to the underlying database schema.',
-        'Constructed a graphical interface using Deno’s Fresh.js full stack framework (React and Tailwind), allowing users to test and run queries directly off the CLI/browser',
-      ],
-    },
-    {
-      listId: 1,
-      companyName: 'Arup',
-      timeWorked: '2019 - 2021',
-      description: [
-        'Led budgeting, forecasting and annual planning processes for the Americas region (>450M revenue annually)',
-        'Served as lead on regional strategic planning/business intelligence initiatives for C-suite team (CFO, COO, CEO)',
-        'Collected data from Azure SQL data warehouse, created Power BI data models, and summarized data into KPI dashboards tracking project and office level financial metrics',
-      ],
-    },
-    {
-      listId: 2,
-      companyName: 'Talend',
-      timeWorked: '2016 - 2019',
-      description: [],
-    },
-    {
-      listId: 3,
-      companyName: 'Genesys',
-      timeWorked: '2014 - 2016',
-      description: [],
-    },
-  ];
-
-  const [currentItem, setCurrentItem] = useState(0);
-  const [currentWP, setCurrentWP] = useState(
-    workHistory.filter((ele) => ele.listId === currentItem)
-  );
-
-  useEffect(() => {
-    setCurrentWP(workHistory.filter((ele) => ele.listId === currentItem));
-  }, [currentItem]);
-
-  const workplaceLinks = workHistory.map((ele, idx) => (
-    <ListItem
-      id={id}
-      listId={ele.listId}
-      key={ele.listId}
-      currentItem={currentItem}
-      setCurrentItem={setCurrentItem}
-    >
-      {ele.companyName}
-    </ListItem>
-  ));
 
   return (
     <div
@@ -100,19 +22,34 @@ function Experience({ id }) {
         <h3 className='font-bold text-4xl my-auto text-left'>
           My Professional Experience <br />
         </h3>
-        <div className='flex flex-col'>
-          <nav className='flex flex-row my-2 gap-2 md:w-full justify-center lg:justify-start'>
-            {workplaceLinks}
-          </nav>
-          <div className={`border ${appColor[id].borderColor} p-6`}>
-            <div className='flex flex-row justify-between mb-2 text-lg font-bold'>
-              <h2>{currentWP[0].companyName}</h2>
-              <p>{currentWP[0].timeWorked}</p>
-            </div>
-            <ul className='text-xs text-justify list-disc list-inside'>
-              {currentWP[0].description.map((ele, idx) => (
-                <li key={idx} className='p-2'>
-                  {ele}
+        <p className='text-xl'>
+          For a full listing of my qualifications and experience, you can view
+          and download my resume{' '}
+          <a
+            className='font-bold underline underline-offset-4'
+            href='https://drive.google.com/file/d/18hyhi-U8bVX1LwNpbqyv67iWhWoVeR59/view?usp=share_link'
+          >
+            HERE.
+          </a>
+        </p>
+        <div className={`border ${appColor[id].borderColor} p-4 lg:p-6`}>
+          <h2 className='mb-4 text-lg font-bold'>Technologies I Work With</h2>
+          <div className='flex flex-row justify-center'>
+            <ul className='h-[300px] overflow-y-scroll grid grid-cols-2 p-4 gap-8 md:grid-cols-6 lg:gap-x-6 lg: gap-y-2 lg:overflow-y-hidden'>
+              {skillSet.map((item, index) => (
+                <li className='relative' key={index}>
+                  <div
+                    className={`absolute top-0 left -0 w-2/6 h-full hover:border-t-2 hover:${appColor[id].borderColor}`}
+                  ></div>
+                  <a
+                    className='text-[2rem] flex flex-col gap-3 content-center my-4'
+                    href={item.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    {item.icon()}
+                    <span className='text-xs text-left'>{item.spanText}</span>
+                  </a>
                 </li>
               ))}
             </ul>

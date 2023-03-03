@@ -15,6 +15,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.use('/dist', express.static(path.resolve(__dirname, '../dist')));
+app.use('/src/files', express.static(path.resolve(__dirname, '../src/files')));
 app.use(
   '/src/images',
   express.static(path.resolve(__dirname, '../src/images'))

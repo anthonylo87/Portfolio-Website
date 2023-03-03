@@ -1,13 +1,20 @@
 import { useContext } from 'react';
 import { appContext } from '../providers/appProvider';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailIcon from '@mui/icons-material/Email';
+import {
+  AiFillMail as EmailIcon,
+  AiFillGithub as GitHubIcon,
+  AiFillLinkedin as LinkedInIcon,
+} from 'react-icons/ai';
 
 function Icon({ children, href }) {
   return (
     <div className='hover:animate-wiggle min-w-[3rem] min-h-[3rem]'>
-      <a className='text-3xl hover:text-4xl' href={href}>
+      <a
+        className='text-3xl hover:text-4xl'
+        target='_blank'
+        rel='noopener noreferrer'
+        href={href}
+      >
         {children}
       </a>
     </div>
