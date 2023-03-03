@@ -2,12 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="src/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./src/images/favicon.ico" />
+    <!-- for PRODUCTION -->
+    <!-- <link rel="stylesheet" href="dist/assets/main-c4c32819.css" />
+    <script type="module" src="dist/assets/main-7f9dc34c.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello friend...</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+      import RefreshRuntime from 'http://localhost:5173/@react-refresh';
+      RefreshRuntime.injectIntoGlobalHook(window);
+      window.$RefreshReg$ = () => {};
+      window.$RefreshSig$ = () => (type) => type;
+      window.__vite_plugin_react_preamble_installed__ = true;
+    </script>
+    <!-- for DEVELOPMENT -->
+    <script type="module" src="http://localhost:5173/src/main.jsx"></script>
   </body>
 </html>
