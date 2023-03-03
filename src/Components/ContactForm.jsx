@@ -61,7 +61,7 @@ const ContactForm = ({ id }) => {
           className={`grow border ${appColor[id].borderColor} p-3 bg-inherit focus:outline-none`}
           type='email'
           id='email'
-          placeholder='Enter your email'
+          placeholder='Enter the subject'
           required
         />
       </div>
