@@ -7,9 +7,7 @@ function Contact({ id }) {
   const { contactRef, selSection, appColor } = useContext(appContext);
 
   const [showModal, setShowModal] = useState(false);
-  const [showModalText, setShowModalText] = useState(
-    'Thank you - your email has been sent'
-  );
+  const [showModalText, setShowModalText] = useState('');
 
   const handleClick = () => {
     setShowModal(false);
