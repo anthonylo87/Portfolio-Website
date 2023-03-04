@@ -25,7 +25,7 @@ const ContactForm = ({ id, setShowModal, setShowModalText }) => {
     } catch (e) {
       console.log(e);
       setShowModalText(
-        'There was an error sending your message - please contact the website admin at 87.anthonylo@gmail.com.'
+        'There was an error sending your message - please contact the website admin.'
       );
     }
 
