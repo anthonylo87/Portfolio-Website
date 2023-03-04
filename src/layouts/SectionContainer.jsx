@@ -6,7 +6,7 @@ function SectionContainer({ children, bgColor }) {
       test
     */}
       <section
-        className={`h-screen w-screen flex flex-col justify-center snap-start ${bgColor}`}
+        className={`h-screen w-screen flex flex-col justify-center snap-center ${bgColor}`}
       >
         {children}
       </section>
