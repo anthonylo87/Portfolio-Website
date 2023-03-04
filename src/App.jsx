@@ -32,7 +32,7 @@ function App() {
             bgColor={appColor[1].background}
             refProp={projectRef}
           >
-            <Project id={1} />
+            <Projects id={1} />
           </SectionContainer>
           <SectionContainer
             bgColor={appColor[2].background}
