@@ -4,7 +4,4 @@ import react from '@vitejs/plugin-react';
 // vite.config.js
 export default defineConfig({
   plugins: [react()],
-  build: {
-    manifest: true,
-  },
 });

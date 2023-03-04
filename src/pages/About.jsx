@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { appContext } from '../providers/appProvider';
 import SectionBorder from '../Layouts/SectionBorder';
+import profileUrl from '../images/profile.jpeg';
 
 function About({ id }) {
   const { aboutRef, selSection, appColor } = useContext(appContext);
@@ -56,7 +57,7 @@ function About({ id }) {
           <div className='mx-auto my-auto invisible md:visible '>
             <img
               className='mx-auto rounded-full w-0 md:min-w-[350px] md:w-[350px]'
-              src='src/images/Profile.jpeg'
+              src={profileUrl}
               alt='profile picture'
             />
           </div>
