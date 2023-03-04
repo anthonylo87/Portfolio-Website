@@ -1,4 +1,5 @@
 const express = require('express');
+const ViteExpress = require('vite-express');
 const path = require('path');
 require('dotenv').config();
 
@@ -28,6 +29,6 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT | 8080;
 
-app.listen(PORT, () => {
-  console.log(`App running in port ${PORT}`);
+ViteExpress.listen(app, PORT, () => {
+  console.log(`Server is listening on port ${PORT}...`);
 });

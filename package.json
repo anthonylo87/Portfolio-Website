@@ -4,20 +4,18 @@
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "start": "clear && concurrently 'vite' 'node ./server/server.js'",
-    "dev": "clear && concurrently 'vite' 'nodemon ./server/server.js'",
+    "dev": "node ./server/server.js",
     "build": "vite build",
-    "serve": "npm run build && node ./server/server.js"
+    "serve": "npm run build && NODE_ENV=production node ./server/server.js"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.8.0",
+    "vite-express": "^0.3.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
