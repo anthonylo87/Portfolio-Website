@@ -60,14 +60,15 @@ export function AppProvider({ children }) {
   };
 
   const handleScroll = (e) => {
+    const innerHeight = window.innerHeight;
+    const scrollTop = e.currentTarget.scrollTop;
+    let timer;
+
     if (timer !== null) {
       clearTimeout(timer);
     }
 
     timer = setTimeout(function () {
-      const innerHeight = window.innerHeight;
-      const scrollTop = e.currentTarget.scrollTop;
-
       if (scrollTop >= 3 * innerHeight) {
         setColor(appColor[3].textColor);
         setSelSection(3);
