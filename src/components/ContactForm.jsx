@@ -85,7 +85,7 @@ const ContactForm = ({ id, setShowModal, setShowModalText }) => {
         />
       </div>
       <button
-        className={`bg-beaver-200 lg:px-10 py-3 text-center text-beaver-900 font-bold hover:underline hover:underline-offset-4 lg:w-fit lg:flex lg:flex-row`}
+        className={`bg-beaver-200 lg:px-10 py-3 text-center text-beaver-900 font-bold hover:underline hover:underline-offset-4 lg:w-fit flex flex-row justify-center`}
         type='submit'
         disabled={status !== 'Submit' ? true : false}
       >
@@ -110,7 +110,7 @@ const ContactForm = ({ id, setShowModal, setShowModalText }) => {
             ></path>
           </svg>
         )}
-        {status}
+        <span className='my-auto'>{status}</span>
       </button>
     </form>
   );
