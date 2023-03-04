@@ -63,16 +63,16 @@ export function AppProvider({ children }) {
     const innerHeight = window.innerHeight;
     const scrollTop = e.currentTarget.scrollTop;
 
-    if (scrollTop >= 3 * innerHeight) {
+    if (scrollTop === 3 * innerHeight) {
       setColor(appColor[3].textColor);
       setSelSection(3);
-    } else if (scrollTop >= 2 * innerHeight) {
+    } else if (scrollTop === 2 * innerHeight) {
       setColor(appColor[2].textColor);
       setSelSection(2);
-    } else if (scrollTop >= innerHeight) {
+    } else if (scrollTop === innerHeight) {
       setColor(appColor[1].textColor);
       setSelSection(1);
-    } else if (scrollTop >= 1) {
+    } else if (scrollTop === 1) {
       setColor(appColor[0].textColor);
       setSelSection(0);
     }
