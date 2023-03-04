@@ -28,8 +28,11 @@ function App() {
           <SectionContainer bgColor={appColor[0].background} refProp={aboutRef}>
             <About id={0} />
           </SectionContainer>
-          <SectionContainer bgColor={appColor[1].background} refProp={expRef}>
-            <Experience id={1} />
+          <SectionContainer
+            bgColor={appColor[1].background}
+            refProp={projectRef}
+          >
+            <Project id={1} />
           </SectionContainer>
           <SectionContainer
             bgColor={appColor[2].background}
