@@ -19,7 +19,7 @@ function Experience({ id }) {
         orientation={`right`}
         appColor={appColor}
       >
-        <h3 className='font-bold text-2xl lg:text-4xl m-auto text-left'>
+        <h3 className='font-bold text-2xl lg:text-4xl text-left'>
           My Professional Experience <br />
         </h3>
         <p className='text-xl'>
@@ -35,7 +35,7 @@ function Experience({ id }) {
         <div className={`border ${appColor[id].borderColor} p-4 lg:p-6`}>
           <h2 className='mb-4 text-lg font-bold'>Technologies I Work With</h2>
           <div className='flex flex-row justify-center'>
-            <ul className='h-[250px] overflow-y-scroll grid grid-cols-2 p-4 gap-8 md:grid-cols-6 lg:gap-x-6 lg: gap-y-2 lg:overflow-y-hidden'>
+            <ul className='h-[250px] lg:h-[350px] overflow-y-scroll grid grid-cols-2 p-4 gap-8 md:grid-cols-6 lg:gap-x-6 lg: gap-y-2 lg:overflow-y-hidden'>
               {skillSet.map((item, index) => (
                 <li className='relative' key={index}>
                   <div
