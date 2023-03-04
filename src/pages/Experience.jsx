@@ -31,7 +31,7 @@ function Experience({ id }) {
             HERE.
           </a>
         </p>
-        {/* <div className={`border ${appColor[id].borderColor} p-4 lg:p-6`}>
+        <div className={`border ${appColor[id].borderColor} p-4 lg:p-6`}>
           <h2 className='mb-4 text-lg font-bold'>Technologies I Work With</h2>
           <div className='flex flex-row justify-center'>
             <ul className='h-[250px] lg:h-[350px] overflow-y-scroll grid grid-cols-3 p-4 gap-4 md:grid-cols-6 lg:gap-x-6 lg:gap-y-2 lg:overflow-y-hidden'>
@@ -53,7 +53,7 @@ function Experience({ id }) {
               ))}
             </ul>
           </div>
-        </div> */}
+        </div>
       </SectionBorder>
     </div>
   );
