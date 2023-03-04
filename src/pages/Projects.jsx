@@ -8,7 +8,7 @@ import axolotlbeatsUrl from '../images/axolotlbeats.png';
 import codepearsUrl from '../images/codepears.png';
 
 function Projects({ id }) {
-  const { projectRef, selSection, appColor } = useContext(appContext);
+  const { selSection, appColor } = useContext(appContext);
   const [currProj, setCurrProj] = useState(null);
 
   const projDescriptions = [

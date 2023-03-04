@@ -49,6 +49,8 @@ function ProjectCard({
             <a
               className='border border-white p-2 mx-2 hover:bg-white hover:text-nepal-900'
               href={projDescriptions[projID].link1[1]}
+              target='_blank'
+              rel='noopener noreferrer'
             >
               {projDescriptions[projID].link1[0]}
             </a>
@@ -57,6 +59,8 @@ function ProjectCard({
             <a
               className='border border-white p-2 m-2 hover:bg-white hover:text-nepal-900'
               href={projDescriptions[projID].link2[1]}
+              target='_blank'
+              rel='noopener noreferrer'
             >
               {projDescriptions[projID].link2[0]}
             </a>

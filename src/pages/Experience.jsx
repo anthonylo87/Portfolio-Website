@@ -21,7 +21,7 @@ function Experience({ id }) {
         <h3 className='font-bold text-2xl lg:text-4xl text-left'>
           My Professional Experience <br />
         </h3>
-        <p className='text-xl'>
+        <p className='lg:text-xl'>
           For a full listing of my qualifications and experience, you can view
           and download my resume{' '}
           <a
@@ -34,11 +34,11 @@ function Experience({ id }) {
         <div className={`border ${appColor[id].borderColor} p-4 lg:p-6`}>
           <h2 className='mb-4 text-lg font-bold'>Technologies I Work With</h2>
           <div className='flex flex-row justify-center'>
-            <ul className='h-[250px] lg:h-[350px] overflow-y-scroll grid grid-cols-2 p-4 gap-8 md:grid-cols-6 lg:gap-x-6 lg: gap-y-2 lg:overflow-y-hidden'>
+            <ul className='h-[250px] lg:h-[350px] overflow-y-scroll grid grid-cols-3 p-4 gap-4 md:grid-cols-6 lg:gap-x-6 lg:gap-y-2 lg:overflow-y-hidden'>
               {skillSet.map((item, index) => (
                 <li className='relative' key={index}>
                   <div
-                    className={`absolute top-0 left -0 w-2/6 h-full hover:border-t-2 hover:${appColor[id].borderColor}`}
+                    className={`absolute top-0 left-0 w-2/6 h-full hover:border-t-2 hover:${appColor[id].borderColor}`}
                   ></div>
                   <a
                     className='text-[2rem] flex flex-col gap-3 content-center my-4'
