@@ -44,7 +44,7 @@ function Contact({ id }) {
       >
         <div className='mx-0'>
           <div className='w-full flex flex-col gap-8 lg:overflow-y-hidden'>
-            <h3 className='font-bold text-4xl text-left'>
+            <h3 className='font-bold text-2xl lg:text-4xl text-left'>
               Want to work together? I'm open to new opportunities!
             </h3>
             <ContactForm

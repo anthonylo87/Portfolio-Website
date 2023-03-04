@@ -9,7 +9,7 @@ function Experience({ id }) {
 
   return (
     <div
-      className={`w-full lg:w-5/6 max-w-screen-xl m-auto ${appColor[id].textColor}`}
+      className={`w-full lg:w-5/6 max-w-screen-xl my-28 ${appColor[id].textColor}`}
       ref={expRef}
     >
       <SectionBorder
@@ -19,7 +19,7 @@ function Experience({ id }) {
         orientation={`right`}
         appColor={appColor}
       >
-        <h3 className='font-bold text-4xl my-auto text-left'>
+        <h3 className='font-bold text-2xl lg:text-4xl my-auto text-left'>
           My Professional Experience <br />
         </h3>
         <p className='text-xl'>

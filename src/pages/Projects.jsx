@@ -58,7 +58,7 @@ function Projects({ id }) {
       >
         <div className='mx-0'>
           <div className='w-full flex flex-col gap-8 lg:overflow-y-hidden'>
-            <h3 className='font-bold text-4xl text-justify'>
+            <h3 className='font-bold text-2xl lg:text-4xl text-justify'>
               Featured Projects
             </h3>
             <div className='h-[425px] overflow-y-scroll lg:overflow-y-hidden lg:grid lg:grid-cols-2 lg:h-full lg:gap-4 lg:max-w-[1000px]'>

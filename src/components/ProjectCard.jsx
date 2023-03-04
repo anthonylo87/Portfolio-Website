@@ -29,12 +29,12 @@ function ProjectCard({
       onMouseEnter={handleClick}
       onMouseLeave={handleClick}
       style={bgImageSrc}
-      className={`h-[300px] bg-cover w-full g:m-2 md:h-[375px] lg:h-full max-h-[300px] p-3 ${
+      className={`h-[300px] bg-cover w-full g:m-2 md:h-[325px] p-6 ${
         projID !== currProj ? `` : `bg-nepal-900 opacity-90`
       }`}
     >
       <div
-        className={`text-base flex flex-col gap-8 text-center text-white justify-center p-16 ${
+        className={`md:text-base flex flex-col gap-8 text-center text-white justify-center h-full ${
           projID !== currProj
             ? `invisible`
             : `visible motion-safe:animate-fadeIn`
