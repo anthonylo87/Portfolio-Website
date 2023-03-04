@@ -4,7 +4,7 @@ import SectionBorder from '../layouts/SectionBorder';
 import profileUrl from '../images/profile.jpeg';
 
 function About({ id }) {
-  const { aboutRef, selSection, appColor } = useContext(appContext);
+  const { selSection, appColor } = useContext(appContext);
 
   return (
     <div

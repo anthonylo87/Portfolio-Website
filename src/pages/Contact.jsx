@@ -4,7 +4,7 @@ import SectionBorder from '../layouts/SectionBorder';
 import ContactForm from '../components/ContactForm';
 
 function Contact({ id }) {
-  const { contactRef, selSection, appColor } = useContext(appContext);
+  const { selSection, appColor } = useContext(appContext);
 
   const [showModal, setShowModal] = useState(false);
   const [showModalText, setShowModalText] = useState('');

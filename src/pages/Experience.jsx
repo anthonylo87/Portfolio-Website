@@ -5,7 +5,7 @@ import SectionBorder from '../layouts/SectionBorder';
 import { skillSet } from '../data/skills';
 
 function Experience({ id }) {
-  const { expRef, selSection, appColor } = useContext(appContext);
+  const { selSection, appColor } = useContext(appContext);
 
   return (
     <div
