@@ -21,7 +21,7 @@ function App() {
         <Socials />
         <NavBar />
         <div
-          className='h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll'
+          className='h-screen lg:snap-y lg:snap-mandatory overflow-y-scroll'
           onScroll={handleScroll}
         >
           <SectionContainer bgColor={appColor[0].background}>
