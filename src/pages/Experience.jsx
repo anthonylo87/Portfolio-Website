@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { appContext } from '../providers/appProvider';
-import SectionBorder from '../Layouts/SectionBorder';
+import SectionBorder from '../layouts/SectionBorder';
 // import { skillSet } from '../data/skills';
 import { skillSet } from '../data/skills';
 

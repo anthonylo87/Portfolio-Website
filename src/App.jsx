@@ -1,7 +1,7 @@
 import { useState, useRef, useContext } from 'react';
 import { appContext } from './providers/appProvider';
-import MainContainer from './Layouts/MainContainer';
-import SectionContainer from './Layouts/SectionContainer';
+import MainContainer from './layouts/MainContainer';
+import SectionContainer from './layouts/SectionContainer';
 import DotNav from './components/DotNav';
 import NavBar from './components/NavBar';
 import Socials from './components/Socials';
