@@ -59,10 +59,11 @@ export function AppProvider({ children }) {
     }
   };
 
+  let timer;
+
   const handleScroll = (e) => {
     const innerHeight = window.innerHeight;
     const scrollTop = e.currentTarget.scrollTop;
-    let timer;
 
     if (timer !== null) {
       clearTimeout(timer);
@@ -78,7 +79,7 @@ export function AppProvider({ children }) {
       } else if (scrollTop >= innerHeight) {
         setColor(appColor[1].textColor);
         setSelSection(1);
-      } else if (scrollTop >= 1) {
+      } else if (scrollTop >= 0) {
         setColor(appColor[0].textColor);
         setSelSection(0);
       }
