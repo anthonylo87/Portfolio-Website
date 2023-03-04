@@ -3,7 +3,7 @@ import { appContext } from './providers/appProvider';
 import MainContainer from './Layouts/MainContainer';
 import SectionContainer from './Layouts/SectionContainer';
 import DotNav from './components/DotNav';
-import NavBar from './Components/NavBar';
+import NavBar from './components/NavBar';
 import Socials from './components/Socials';
 import About from './pages/About';
 import Experience from './pages/Experience';
