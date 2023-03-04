@@ -16,7 +16,6 @@ function Contact({ id }) {
   return (
     <div
       className={`w-full lg:w-5/6 max-w-screen-2xl m-auto relative ${appColor[id].textColor}`}
-      ref={contactRef}
     >
       {showModal && (
         <div

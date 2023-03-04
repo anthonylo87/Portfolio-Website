@@ -47,7 +47,6 @@ function Projects({ id }) {
   return (
     <div
       className={`w-full lg:w-5/6 max-w-screen-2xl m-auto ${appColor[id].textColor}`}
-      ref={projectRef}
     >
       <SectionBorder
         id={id}

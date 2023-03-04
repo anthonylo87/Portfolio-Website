@@ -1,4 +1,4 @@
-function SectionContainer({ children, bgColor }) {
+function SectionContainer({ children, bgColor, refProp }) {
   return (
     <>
       {/*
@@ -6,7 +6,8 @@ function SectionContainer({ children, bgColor }) {
       test
     */}
       <section
-        className={`h-screen w-screen flex flex-col justify-center snap-center ${bgColor}`}
+        className={`h-screen w-screen flex flex-col justify-center snap-start ${bgColor}`}
+        ref={refProp}
       >
         {children}
       </section>
