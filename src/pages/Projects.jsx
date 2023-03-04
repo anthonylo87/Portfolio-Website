@@ -2,6 +2,10 @@ import { useState, useContext } from 'react';
 import { appContext } from '../providers/appProvider';
 import SectionBorder from '../Layouts/SectionBorder';
 import ProjectCard from '../components/ProjectCard';
+import denogresUrl from '../images/denogres.png';
+import portfolioUrl from '../images/portfolio.png';
+import axolotlbeatsUrl from '../images/axolotlbeats.png';
+import codepearsUrl from '../images/codepears.png';
 
 function Projects({ id }) {
   const { projectRef, selSection, appColor } = useContext(appContext);
@@ -64,7 +68,7 @@ function Projects({ id }) {
                 currProj={currProj}
                 setCurrProj={setCurrProj}
                 projDescriptions={projDescriptions}
-                src='src/images/denogres.png'
+                src={denogresUrl}
               />
               <ProjectCard
                 id={id}
@@ -72,7 +76,7 @@ function Projects({ id }) {
                 currProj={currProj}
                 setCurrProj={setCurrProj}
                 projDescriptions={projDescriptions}
-                src='src/images/portfolio.png'
+                src={portfolioUrl}
               />
               <ProjectCard
                 id={id}
@@ -80,7 +84,7 @@ function Projects({ id }) {
                 currProj={currProj}
                 setCurrProj={setCurrProj}
                 projDescriptions={projDescriptions}
-                src='src/images/axolotlbeats.png'
+                src={axolotlbeatsUrl}
               />
               <ProjectCard
                 id={id}
@@ -88,7 +92,7 @@ function Projects({ id }) {
                 currProj={currProj}
                 setCurrProj={setCurrProj}
                 projDescriptions={projDescriptions}
-                src='src/images/codepears.png'
+                src={codepearsUrl}
               />
             </div>
           </div>
