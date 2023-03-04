@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { appContext } from '../providers/appProvider';
-import SectionBorder from '../Layouts/SectionBorder';
+import SectionBorder from '../layouts/SectionBorder';
 import profileUrl from '../images/profile.jpeg';
 
 function About({ id }) {

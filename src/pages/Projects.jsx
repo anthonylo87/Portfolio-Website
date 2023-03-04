@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { appContext } from '../providers/appProvider';
-import SectionBorder from '../Layouts/SectionBorder';
+import SectionBorder from '../layouts/SectionBorder';
 import ProjectCard from '../components/ProjectCard';
 import denogresUrl from '../images/denogres.png';
 import portfolioUrl from '../images/portfolio.png';
