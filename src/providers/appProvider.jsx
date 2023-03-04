@@ -63,6 +63,8 @@ export function AppProvider({ children }) {
     const innerHeight = window.innerHeight;
     const scrollTop = e.currentTarget.scrollTop;
 
+    console.log(e.target, scrollTop);
+
     if (scrollTop >= 3 * innerHeight) {
       setColor(appColor[3].textColor);
       setSelSection(3);
