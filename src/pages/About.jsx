@@ -40,8 +40,8 @@ function About({ id }) {
               <br />
               <br />
               Most recently I co-developed a product called DenoGres &#40;open
-              source&#41;, an ORM tool built for PostgreSQL for use with Deno
-              runtime.
+              source&#41;, an ORM tool built for PostgreSQL for use with the
+              Deno runtime.
               <br />
               <br />
               My previous background is in utilizing data warehousing solutions
