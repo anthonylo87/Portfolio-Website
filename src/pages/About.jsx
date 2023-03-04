@@ -33,10 +33,7 @@ function About({ id }) {
             </h3>
             <p>
               <br />
-              <strong className='text-2xl'>
-                I'm a full stack developer currently living in Los Angeles,
-                California.
-              </strong>
+              <strong className='text-2xl'>I'm a full stack developer.</strong>
               <br />
               <br />
               Most recently I co-developed a product called DenoGres &#40;open
