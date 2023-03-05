@@ -17,15 +17,11 @@ function NavLink({ children, refType }) {
 }
 
 function NavBar() {
-  const { aboutRef, expRef, projectRef, contactRef, color, nav } =
+  const { aboutRef, expRef, projectRef, contactRef, color } =
     useContext(appContext);
 
   return (
-    <nav
-      className={`fixed inset-x-0 top-0 w-full font-bold ${color} ${
-        nav ? `` : `text-opacity-100`
-      }`}
-    >
+    <nav className={`fixed inset-x-0 top-0 w-full font-bold ${color}`}>
       <div className='max-w-7xl m-auto flex flex-row justify-center lg:justify-end'>
         <ul className='flex flex-row'>
           <NavLink refType={aboutRef}>01. About</NavLink>
