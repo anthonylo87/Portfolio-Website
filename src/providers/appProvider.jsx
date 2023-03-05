@@ -83,7 +83,7 @@ export function AppProvider({ children }) {
         setColor(appColor[0].textColor);
         setSelSection(0);
       }
-    }, 5);
+    }, 20);
   };
 
   return (
