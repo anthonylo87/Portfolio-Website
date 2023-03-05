@@ -34,20 +34,24 @@ function Experience({ id }) {
         <div className={`border ${appColor[id].borderColor} p-4 lg:p-6`}>
           <h2 className='mb-4 text-lg font-bold'>Technologies I Work With</h2>
           <div className='flex flex-row justify-center'>
-            <ul className='h-[250px] lg:h-[350px] overflow-y-scroll grid grid-cols-3 p-4 gap-4 md:grid-cols-6 lg:gap-x-6 lg:gap-y-2 lg:overflow-y-hidden'>
+            <ul className='h-[250px] lg:h-[350px] overflow-y-scroll grid grid-cols-3 p-4 gap-4 lg:grid-cols-6 lg:gap-x-4 lg:gap-y-2 lg:overflow-y-hidden'>
               {skillSet.map((item, index) => (
                 <li className='relative' key={index}>
                   <div
-                    className={`absolute top-0 left-0 w-2/6 h-full hover:border-t-2 hover:${appColor[id].borderColor}`}
+                    className={`absolute top-0 left-0 h-full hover:border-t-2 hover:${appColor[id].borderColor}`}
                   ></div>
                   <a
-                    className='text-[2rem] flex flex-col gap-3 content-center my-4'
+                    className='flex flex-col gap-3 text-[2rem]'
                     href={item.url}
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    {item.icon()}
-                    <span className='text-xs text-left'>{item.spanText}</span>
+                    <div className='flex flex-row justify-center'>
+                      {item.icon()}
+                    </div>
+                    <span className='block text-xs text-center w-full'>
+                      {item.spanText}
+                    </span>
                   </a>
                 </li>
               ))}

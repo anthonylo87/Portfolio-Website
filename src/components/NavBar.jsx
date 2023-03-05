@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { appContext } from '../providers/appProvider';
 
 function NavLink({ children, refType }) {
-  const { scrollIntoView } = useContext(appContext);
+  const { scrollIntoView, nav } = useContext(appContext);
 
   return (
     <li className='p-3'>
@@ -21,7 +21,11 @@ function NavBar() {
     useContext(appContext);
 
   return (
-    <nav className={`fixed inset-x-0 top-0 w-full font-bold ${color}`}>
+    <nav
+      className={`fixed inset-x-0 top-0 w-full font-bold ${color} ${
+        nav ? `` : `text-opacity-100`
+      }`}
+    >
       <div className='max-w-7xl m-auto flex flex-row justify-center lg:justify-end'>
         <ul className='flex flex-row'>
           <NavLink refType={aboutRef}>01. About</NavLink>
