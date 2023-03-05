@@ -5,7 +5,7 @@ export const appContext = createContext({});
 export function AppProvider({ children }) {
   const [color, setColor] = useState(`text-raffia-800`);
   const [selSection, setSelSection] = useState(0);
-  const [nav, showNav] = useState(true);
+  const [nav, setNav] = useState(true);
 
   const aboutRef = useRef(null);
   const expRef = useRef(null);
@@ -66,6 +66,8 @@ export function AppProvider({ children }) {
     const innerHeight = window.innerHeight;
     const scrollTop = e.currentTarget.scrollTop;
 
+    setNav(false);
+
     if (timer !== null) {
       clearTimeout(timer);
     }
@@ -84,6 +86,8 @@ export function AppProvider({ children }) {
         setColor(appColor[0].textColor);
         setSelSection(0);
       }
+
+      setNav(true);
     }, 20);
   };
 
@@ -91,6 +95,7 @@ export function AppProvider({ children }) {
     <appContext.Provider
       value={{
         color,
+        nav,
         setColor,
         selSection,
         setSelSection,

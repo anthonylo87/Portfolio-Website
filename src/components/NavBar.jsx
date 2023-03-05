@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { appContext } from '../providers/appProvider';
 
 function NavLink({ children, refType }) {
-  const { scrollIntoView, nav } = useContext(appContext);
+  const { scrollIntoView } = useContext(appContext);
 
   return (
     <li className='p-3'>
@@ -17,7 +17,7 @@ function NavLink({ children, refType }) {
 }
 
 function NavBar() {
-  const { aboutRef, expRef, projectRef, contactRef, color, scrollIntoView } =
+  const { aboutRef, expRef, projectRef, contactRef, color, nav } =
     useContext(appContext);
 
   return (
