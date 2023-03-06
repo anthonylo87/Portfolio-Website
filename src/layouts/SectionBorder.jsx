@@ -12,7 +12,7 @@ function SectionBorder({
       : 'motion-safe:animate-fadeBorderRight';
 
   return (
-    <div className='text-left justify-center mx-8 lg:p-16'>
+    <div className='text-left justify-center mx-8'>
       <div className='flex flex-row'>
         <div className='my-auto text-justify grow'>
           <div

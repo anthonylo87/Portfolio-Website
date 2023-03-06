@@ -25,21 +25,31 @@ function App() {
           className='h-screen snap-y snap-mandatory overflow-y-scroll'
           onScroll={handleScroll}
         >
-          <SectionContainer bgColor={appColor[0].background} refProp={aboutRef}>
+          <SectionContainer
+            bgColor={appColor[0].background}
+            refProp={aboutRef}
+            id={0}
+          >
             <About id={0} />
           </SectionContainer>
-          <SectionContainer bgColor={appColor[1].background} refProp={expRef}>
+          <SectionContainer
+            bgColor={appColor[1].background}
+            refProp={expRef}
+            id={1}
+          >
             <Experience id={1} />
           </SectionContainer>
           <SectionContainer
             bgColor={appColor[2].background}
             refProp={projectRef}
+            id={2}
           >
             <Projects id={2} />
           </SectionContainer>
           <SectionContainer
             bgColor={appColor[3].background}
             refProp={contactRef}
+            id={3}
           >
             <Contact id={3} />
           </SectionContainer>

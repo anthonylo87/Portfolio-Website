@@ -45,59 +45,55 @@ function Projects({ id }) {
   ];
 
   return (
-    <div
-      className={`w-full lg:w-5/6 max-w-screen-2xl m-auto ${appColor[id].textColor}`}
+    <SectionBorder
+      id={id}
+      selSection={selSection}
+      header={`${String(id + 1).padStart(2, '0')}. Projects`}
+      orientation={`left`}
+      appColor={appColor}
     >
-      <SectionBorder
-        id={id}
-        selSection={selSection}
-        header={`${String(id + 1).padStart(2, '0')}. Projects`}
-        orientation={`left`}
-        appColor={appColor}
-      >
-        <div className='mx-0'>
-          <div className='w-full flex flex-col gap-8 lg:overflow-y-hidden'>
-            <h3 className='font-bold text-2xl lg:text-4xl text-justify'>
-              Featured Projects
-            </h3>
-            <div className='h-[425px] overflow-y-scroll lg:overflow-y-hidden lg:grid lg:grid-cols-2 lg:h-full lg:gap-4 lg:max-w-[1000px]'>
-              <ProjectCard
-                id={id}
-                projID={0}
-                currProj={currProj}
-                setCurrProj={setCurrProj}
-                projDescriptions={projDescriptions}
-                src={denogresUrl}
-              />
-              <ProjectCard
-                id={id}
-                projID={1}
-                currProj={currProj}
-                setCurrProj={setCurrProj}
-                projDescriptions={projDescriptions}
-                src={portfolioUrl}
-              />
-              <ProjectCard
-                id={id}
-                projID={2}
-                currProj={currProj}
-                setCurrProj={setCurrProj}
-                projDescriptions={projDescriptions}
-                src={axolotlbeatsUrl}
-              />
-              <ProjectCard
-                id={id}
-                projID={3}
-                currProj={currProj}
-                setCurrProj={setCurrProj}
-                projDescriptions={projDescriptions}
-                src={codepearsUrl}
-              />
-            </div>
+      <div className='mx-0'>
+        <div className='w-full flex flex-col gap-8 lg:overflow-y-hidden'>
+          <h3 className='font-bold text-2xl lg:text-4xl text-justify'>
+            Featured Projects
+          </h3>
+          <div className='overflow-y-scroll lg:overflow-y-hidden lg:grid lg:grid-cols-2 lg:h-full lg:gap-4 lg:max-w-[1000px]'>
+            <ProjectCard
+              id={id}
+              projID={0}
+              currProj={currProj}
+              setCurrProj={setCurrProj}
+              projDescriptions={projDescriptions}
+              src={denogresUrl}
+            />
+            <ProjectCard
+              id={id}
+              projID={1}
+              currProj={currProj}
+              setCurrProj={setCurrProj}
+              projDescriptions={projDescriptions}
+              src={portfolioUrl}
+            />
+            <ProjectCard
+              id={id}
+              projID={2}
+              currProj={currProj}
+              setCurrProj={setCurrProj}
+              projDescriptions={projDescriptions}
+              src={axolotlbeatsUrl}
+            />
+            <ProjectCard
+              id={id}
+              projID={3}
+              currProj={currProj}
+              setCurrProj={setCurrProj}
+              projDescriptions={projDescriptions}
+              src={codepearsUrl}
+            />
           </div>
         </div>
-      </SectionBorder>
-    </div>
+      </div>
+    </SectionBorder>
   );
 }
 export default Projects;

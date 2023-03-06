@@ -14,8 +14,12 @@ function Contact({ id }) {
   };
 
   return (
-    <div
-      className={`w-full lg:w-5/6 max-w-screen-2xl m-auto relative ${appColor[id].textColor}`}
+    <SectionBorder
+      id={id}
+      selSection={selSection}
+      header={`${String(id + 1).padStart(2, '0')}. Contact`}
+      orientation={`left`}
+      appColor={appColor}
     >
       {showModal && (
         <div
@@ -34,27 +38,19 @@ function Contact({ id }) {
           </div>
         </div>
       )}
-      <SectionBorder
-        id={id}
-        selSection={selSection}
-        header={`${String(id + 1).padStart(2, '0')}. Contact`}
-        orientation={`left`}
-        appColor={appColor}
-      >
-        <div className='mx-0'>
-          <div className='w-full flex flex-col gap-8 lg:overflow-y-hidden'>
-            <h3 className='font-bold text-2xl lg:text-4xl text-left'>
-              Want to work together? I'm open to new opportunities!
-            </h3>
-            <ContactForm
-              id={id}
-              setShowModal={setShowModal}
-              setShowModalText={setShowModalText}
-            />
-          </div>
+      <div className='mx-0'>
+        <div className='w-full flex flex-col gap-8 lg:overflow-y-hidden'>
+          <h3 className='font-bold text-2xl lg:text-4xl text-left'>
+            Want to work together? I'm open to new opportunities!
+          </h3>
+          <ContactForm
+            id={id}
+            setShowModal={setShowModal}
+            setShowModalText={setShowModalText}
+          />
         </div>
-      </SectionBorder>
-    </div>
+      </div>
+    </SectionBorder>
   );
 }
 export default Contact;
