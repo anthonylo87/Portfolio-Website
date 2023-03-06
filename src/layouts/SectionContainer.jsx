@@ -11,7 +11,7 @@ function SectionContainer({ children, bgColor, refProp, id }) {
         ref={refProp}
       >
         <div
-          className={`w-full lg:w-5/6 max-w-screen-2xl max-h-[75vh] overflow-y-scroll no-scrollbar m-auto ${appColor[id].textColor}`}
+          className={`w-full lg:w-5/6 max-w-screen-xl max-h-[75vh] overflow-y-scroll no-scrollbar m-auto ${appColor[id].textColor}`}
         >
           {children}
         </div>
