@@ -36,7 +36,7 @@ function Experience({ id }) {
         >
           <h2 className='mb-4 text-lg font-bold'>Technologies I Work With</h2>
           <div className='flex flex-row justify-center'>
-            <ul className='h-[250px] lg:h-[350px] overflow-y-scroll grid grid-cols-3 p-4 gap-4 md:grid-cols-6 lg:gap-x-4 lg:gap-y-2 lg:overflow-y-hidden'>
+            <ul className='h-[250px] overflow-y-scroll grid grid-cols-3 p-4 gap-4 md:grid-cols-6 lg:gap-x-4 lg:gap-y-2 lg:overflow-y-hidden'>
               {skillSet.map((item, index) => (
                 <li className='relative' key={index}>
                   <div
