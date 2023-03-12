@@ -29,7 +29,7 @@ function ProjectCard({
       onMouseEnter={handleClick}
       onMouseLeave={handleClick}
       style={bgImageSrc}
-      className={`h-[275px] bg-cover w-full g:m-2 md:h-[275px] p-6 ${
+      className={`h-[210px] xl:h-[250px] bg-contain bg-no-repeat g:m-2 p-6 ${
         projID !== currProj ? `` : `bg-nepal-900 opacity-90`
       }`}
     >

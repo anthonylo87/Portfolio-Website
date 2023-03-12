@@ -2,10 +2,10 @@ import { useState, useContext } from 'react';
 import { appContext } from '../providers/appProvider';
 import SectionBorder from '../layouts/SectionBorder';
 import ProjectCard from '../components/ProjectCard';
-import denogresUrl from '../images/denogres.png';
-import portfolioUrl from '../images/portfolio.png';
-import axolotlbeatsUrl from '../images/axolotlbeats.png';
-import codepearsUrl from '../images/codepears.png';
+import denogresUrl from '../images/denogres_ipadmini_spacegrey_landscape.png';
+import portfolioUrl from '../images/portfolio_ipadmini_spacegrey_landscape.png';
+import axolotlbeatsUrl from '../images/axolotl_ipadmini_spacegrey_landscape.png';
+import codepearsUrl from '../images/codepears_ipadmini_spacegrey_landscape.png';
 
 function Projects({ id }) {
   const { selSection, appColor } = useContext(appContext);
@@ -57,7 +57,7 @@ function Projects({ id }) {
           <h3 className='font-bold text-2xl lg:text-4xl text-justify'>
             Featured Projects
           </h3>
-          <div className='overflow-y-scroll lg:overflow-y-hidden lg:grid lg:grid-cols-2 lg:h-full lg:gap-4 lg:max-w-[1000px]'>
+          <div className='overflow-y-scroll lg:overflow-y-hidden lg:grid lg:grid-cols-2 lg:h-full lg:gap-4 lg:max-w-[750px]'>
             <ProjectCard
               id={id}
               projID={0}
