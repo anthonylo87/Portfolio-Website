@@ -19,10 +19,6 @@ function ProjectCard({
     }
   };
 
-  const bgImageSrc = {
-    backgroundImage: projID !== currProj ? `url(${src})` : `none`,
-  };
-
   const Card = ({ children }) => {
     return (
       <span className='my-1 display: inline-block px-1 mx-1 bg-nepal-700 text-white font-bold'>
@@ -48,6 +44,7 @@ function ProjectCard({
     <div className='flex flex-col gap-6 lg:flex-row'>
       <img
         loading='lazy'
+        alt={`${projDescriptions[projID].name} picture`}
         src={src}
         className={`h-[210px] xl:h-[430px] bg-contain bg-no-repeat my-auto ${
           projID !== currProj ? `` : `bg-nepal-900 opacity-90`
