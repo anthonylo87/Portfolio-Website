@@ -18,14 +18,14 @@ function Dot({ id, refType }) {
 }
 
 function DotNav() {
-  const { aboutRef, expRef, projectRef } = useContext(appContext);
+  const { aboutRef, expRef, projectRef, contactRef } = useContext(appContext);
 
   return (
     <nav className='fixed inset-y-0 left-6 flex flex-col justify-center invisible lg:visible'>
       <Dot id={0} refType={aboutRef} />
       <Dot id={1} refType={expRef} />
       <Dot id={2} refType={projectRef} />
-      <Dot id={3} />
+      <Dot id={3} refTyp={contactRef} />
     </nav>
   );
 }
