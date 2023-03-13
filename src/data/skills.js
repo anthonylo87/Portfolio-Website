@@ -60,7 +60,7 @@ const skillSet = [
   },
   {
     icon: DiAngularSimple,
-    spanText: 'Angular',
+    spanText: 'ANGULAR',
     url: 'https://angular.io/',
   },
   {

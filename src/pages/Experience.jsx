@@ -39,9 +39,6 @@ function Experience({ id }) {
             <ul className='h-[250px] overflow-y-scroll grid grid-cols-3 p-4 gap-4 md:grid-cols-6 lg:gap-x-4 lg:gap-y-2 lg:overflow-y-hidden'>
               {skillSet.map((item, index) => (
                 <li className='relative' key={index}>
-                  <div
-                    className={`absolute top-0 left-0 h-full hover:border-t-2 hover:${appColor[id].borderColor}`}
-                  ></div>
                   <a
                     className='flex flex-col gap-3 text-[2rem]'
                     href={item.url}
@@ -51,7 +48,7 @@ function Experience({ id }) {
                     <div className='flex flex-row justify-center'>
                       {item.icon()}
                     </div>
-                    <span className='block text-xs text-center w-full'>
+                    <span className='block text-xs text-center uppercase w-full'>
                       {item.spanText}
                     </span>
                   </a>
