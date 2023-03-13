@@ -23,49 +23,65 @@ function ProjectCard({
     backgroundImage: projID !== currProj ? `url(${src})` : `none`,
   };
 
+  const Card = ({ children }) => {
+    return (
+      <span className='my-1 display: inline-block px-1 mx-1 bg-nepal-700 text-white font-bold'>
+        {children}
+      </span>
+    );
+  };
+
+  const Button = ({ description, link }) => {
+    return (
+      <a
+        className='display: inline-block text-white bg-nepal-900 p-2 hover:underline hover:underline-offset-4'
+        href={link}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        {description}
+      </a>
+    );
+  };
+
   return (
-    <div
-      onClick={handleClick}
-      onMouseEnter={handleClick}
-      onMouseLeave={handleClick}
-      style={bgImageSrc}
-      className={`h-[210px] xl:h-[250px] bg-contain bg-no-repeat g:m-2 p-6 ${
-        projID !== currProj ? `` : `bg-nepal-900 opacity-90`
-      }`}
-    >
-      <div
-        className={`md:text-base flex flex-col gap-8 text-center text-white justify-center h-full ${
-          projID !== currProj
-            ? `invisible`
-            : `visible motion-safe:animate-fadeIn`
+    <div className='flex flex-col gap-6 lg:flex-row'>
+      <img
+        loading='lazy'
+        src={src}
+        className={`h-[210px] xl:h-[430px] bg-contain bg-no-repeat my-auto ${
+          projID !== currProj ? `` : `bg-nepal-900 opacity-90`
         }`}
+      ></img>
+      <div
+        className={`md:text-sm flex flex-col gap-8 my-4 p-8 border grow ${appColor[id].borderColor}`}
       >
         <h3 className='text-md lg:text-xl font-bold'>
           {projDescriptions[projID].name}
         </h3>
         <p>{projDescriptions[projID].description}</p>
-        <span className='font-bold mt-2'>
+        <p className='whitespace-normal'>
+          <span className='font-bold display: inline-block'>
+            Technologies used:
+          </span>
+          {projDescriptions[projID].tags.map((ele) => (
+            <Card>{ele}</Card>
+          ))}
+        </p>
+        <div className='flex flex-row gap-2 lg:gap-4 font-bold'>
           {projDescriptions[projID].link1[0] && (
-            <a
-              className='border border-white p-2 mx-2 hover:bg-white hover:text-nepal-900'
-              href={projDescriptions[projID].link1[1]}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {projDescriptions[projID].link1[0]}
-            </a>
+            <Button
+              description={projDescriptions[projID].link1[0]}
+              link={projDescriptions[projID].link1[1]}
+            />
           )}
           {projDescriptions[projID].link2[0] && (
-            <a
-              className='border border-white p-2 m-2 hover:bg-white hover:text-nepal-900'
-              href={projDescriptions[projID].link2[1]}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {projDescriptions[projID].link2[0]}
-            </a>
+            <Button
+              description={projDescriptions[projID].link2[0]}
+              link={projDescriptions[projID].link2[1]}
+            />
           )}
-        </span>
+        </div>
       </div>
     </div>
   );
