@@ -46,7 +46,7 @@ function ProjectCard({
         loading='lazy'
         alt={`${projDescriptions[projID].name} picture`}
         src={src}
-        className={`h-[210px] xl:h-[430px] bg-contain bg-no-repeat my-auto ${
+        className={`h-[210px] md:h-[430px] w-auto m-auto ${
           projID !== currProj ? `` : `bg-nepal-900 opacity-90`
         }`}
       ></img>
