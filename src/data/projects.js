@@ -9,7 +9,7 @@ export const projDescriptions = [
       'React',
       'Tailwind',
       'Deno',
-      'JWT/Authentication',
+      'JWT',
       'PostgreSQL',
     ],
     link1: ['Github', 'https://github.com/anthonylo87/DenoGres'],
