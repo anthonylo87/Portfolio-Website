@@ -12,10 +12,13 @@ export const projDescriptions = [
       'JWT',
       'PostgreSQL',
     ],
-    link1: ['Github', 'https://github.com/anthonylo87/DenoGres'],
-    link2: [
-      'Medium',
-      'https://medium.com/@cvinsb/denogres-2-0-unleashed-37265baf571a',
+    links: [
+      ['Github', 'https://github.com/anthonylo87/DenoGres'],
+      [
+        'Medium',
+        'https://medium.com/@cvinsb/denogres-2-0-unleashed-37265baf571a',
+      ],
+      ['Deno Package', 'https://deno.land/x/denogres@v4.0.1'],
     ],
   },
   {
@@ -23,8 +26,7 @@ export const projDescriptions = [
     description:
       'My personal page, showcasing projects that i have worked on. Includes a bio section with information about me and my background, core technologies that I have previously utilized, some key projects that I want to highlight, and my contact information. I opted to use Vite instead of Webpack to bundle (faster server start) and employ CI/CD to deploy to GH pages.',
     tags: ['React', 'Tailwind', 'Github Actions', 'Vite'],
-    link1: ['Github', 'https://github.com/anthonylo87/Portfolio-Website'],
-    link2: ['', ''],
+    links: [['Github', 'https://github.com/anthonylo87/Portfolio-Website']],
   },
   {
     name: 'Axolotl Beats',
@@ -39,15 +41,13 @@ export const projDescriptions = [
       'Spotify API',
       'Webpack',
     ],
-    link1: ['Github', 'https://github.com/anthonylo87/Axolotl-Beats'],
-    link2: ['', ''],
+    links: [['Github', 'https://github.com/anthonylo87/Axolotl-Beats']],
   },
   {
     name: 'CodePears',
     description:
       'A platform used to meet and connect with other engineers. Users can create listings, view listings, and join listings created by other users.Users can also view their profiles to make changes to existing listings or cancel their exsiting listings',
     tags: ['React', 'Redux', 'Node', 'Express', 'MongoDB', 'Webpack'],
-    link1: ['', ''],
-    link2: ['', ''],
+    links: [],
   },
 ];

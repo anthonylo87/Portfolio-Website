@@ -66,7 +66,14 @@ function ProjectCard({
           ))}
         </p>
         <div className='flex flex-row gap-2 lg:gap-4 font-bold'>
-          {projDescriptions[projID].link1[0] && (
+          {projDescriptions[projID].links.map((ele) => {
+            console.log('ele', ele);
+            const [description, link] = ele;
+            console.log('description, link', description, link);
+            return <Button description={description} link={link} />;
+          })}
+
+          {/* {projDescriptions[projID].link1[0] && (
             <Button
               description={projDescriptions[projID].link1[0]}
               link={projDescriptions[projID].link1[1]}
@@ -77,7 +84,7 @@ function ProjectCard({
               description={projDescriptions[projID].link2[0]}
               link={projDescriptions[projID].link2[1]}
             />
-          )}
+          )} */}
         </div>
       </div>
     </div>
