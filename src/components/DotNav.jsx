@@ -25,7 +25,7 @@ function DotNav() {
       <Dot id={0} refType={aboutRef} />
       <Dot id={1} refType={expRef} />
       <Dot id={2} refType={projectRef} />
-      <Dot id={3} refTyp={contactRef} />
+      <Dot id={3} refType={contactRef} />
     </nav>
   );
 }
