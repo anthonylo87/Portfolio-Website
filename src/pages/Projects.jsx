@@ -20,45 +20,43 @@ function Projects({ id }) {
       orientation={`left`}
       appColor={appColor}
     >
-      <div className='mx-0'>
-        <div className='w-full flex flex-col gap-8'>
-          <h3 className='font-bold text-2xl lg:text-4xl text-justify'>
-            Featured Projects
-          </h3>
-          <div className='overflow-y-scroll lg:overflow-y-hidden flex flex-col gap-4'>
-            <ProjectCard
-              id={id}
-              projID={0}
-              currProj={currProj}
-              setCurrProj={setCurrProj}
-              projDescriptions={projDescriptions}
-              src={denogresUrl}
-            />
-            <ProjectCard
-              id={id}
-              projID={1}
-              currProj={currProj}
-              setCurrProj={setCurrProj}
-              projDescriptions={projDescriptions}
-              src={portfolioUrl}
-            />
-            <ProjectCard
-              id={id}
-              projID={2}
-              currProj={currProj}
-              setCurrProj={setCurrProj}
-              projDescriptions={projDescriptions}
-              src={axolotlbeatsUrl}
-            />
-            <ProjectCard
-              id={id}
-              projID={3}
-              currProj={currProj}
-              setCurrProj={setCurrProj}
-              projDescriptions={projDescriptions}
-              src={codepearsUrl}
-            />
-          </div>
+      <div className='w-full flex flex-col gap-8'>
+        <h3 className='font-bold text-2xl lg:text-4xl text-justify'>
+          Featured Projects
+        </h3>
+        <div className='h-[500px] overflow-y-scroll no-scrollbar flex flex-col gap-4'>
+          <ProjectCard
+            id={id}
+            projID={0}
+            currProj={currProj}
+            setCurrProj={setCurrProj}
+            projDescriptions={projDescriptions}
+            src={denogresUrl}
+          />
+          <ProjectCard
+            id={id}
+            projID={1}
+            currProj={currProj}
+            setCurrProj={setCurrProj}
+            projDescriptions={projDescriptions}
+            src={portfolioUrl}
+          />
+          <ProjectCard
+            id={id}
+            projID={2}
+            currProj={currProj}
+            setCurrProj={setCurrProj}
+            projDescriptions={projDescriptions}
+            src={axolotlbeatsUrl}
+          />
+          <ProjectCard
+            id={id}
+            projID={3}
+            currProj={currProj}
+            setCurrProj={setCurrProj}
+            projDescriptions={projDescriptions}
+            src={codepearsUrl}
+          />
         </div>
       </div>
     </SectionBorder>
