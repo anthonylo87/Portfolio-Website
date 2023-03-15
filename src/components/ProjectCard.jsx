@@ -67,9 +67,7 @@ function ProjectCard({
         </p>
         <div className='flex flex-row gap-2 lg:gap-4 font-bold'>
           {projDescriptions[projID].links.map((ele) => {
-            console.log('ele', ele);
             const [description, link] = ele;
-            console.log('description, link', description, link);
             return <Button description={description} link={link} />;
           })}
 
