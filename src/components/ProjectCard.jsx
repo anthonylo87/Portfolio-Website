@@ -70,19 +70,6 @@ function ProjectCard({
             const [description, link] = ele;
             return <Button description={description} link={link} />;
           })}
-
-          {/* {projDescriptions[projID].link1[0] && (
-            <Button
-              description={projDescriptions[projID].link1[0]}
-              link={projDescriptions[projID].link1[1]}
-            />
-          )}
-          {projDescriptions[projID].link2[0] && (
-            <Button
-              description={projDescriptions[projID].link2[0]}
-              link={projDescriptions[projID].link2[1]}
-            />
-          )} */}
         </div>
       </div>
     </div>
