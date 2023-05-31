@@ -48,6 +48,7 @@ function About({ id }) {
         </div>
         <div className='mx-auto my-auto invisible md:visible '>
           <img
+            loading='lazy'
             className='mx-auto rounded-full w-0 md:min-w-[350px] md:w-[350px]'
             src={profileUrl}
             alt='profile picture'
